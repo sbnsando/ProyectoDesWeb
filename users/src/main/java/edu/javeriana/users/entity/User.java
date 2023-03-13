@@ -11,12 +11,13 @@ public class User {
     public User() {
     }
 
-    public User(int identityNumb, String name, Date birthday, int idCity, boolean admin) {
+    public User(int identityNumb, String name, Date birthday, int idCity, boolean admin, boolean active) {
         this.identityNumb = identityNumb;
         this.name = name;
         this.birthday = birthday;
         this.idCity = idCity;
         this.admin = admin;
+        this.active = active;
     }
 
     @Id
@@ -37,6 +38,9 @@ public class User {
 
     @Column(name = "admin")
     private boolean admin;
+
+    @Column(name = "active")
+    private boolean active;
 
     public int getId() {
         return id;
@@ -84,5 +88,13 @@ public class User {
 
     public void setAdmin(boolean admin) {
         this.admin = admin;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 }

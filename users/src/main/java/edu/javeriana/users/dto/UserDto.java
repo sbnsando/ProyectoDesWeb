@@ -16,7 +16,19 @@ public class UserDto {
 
     private boolean admin;
 
+
+    private boolean active;
+
     public UserDto(){
+    }
+
+    public UserDto(int identityNumb, String name, Date birthday, int idCity, boolean admin, boolean active) {
+        this.identityNumb = identityNumb;
+        this.name = name;
+        this.birthday = birthday;
+        this.idCity = idCity;
+        this.admin = admin;
+        this.active = active;
     }
 
     public int getIdentityNumb() {
@@ -57,5 +69,13 @@ public class UserDto {
 
     public void setAdmin(boolean admin) {
         this.admin = admin;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
+    public boolean isActive() {
+        return active;
     }
 }

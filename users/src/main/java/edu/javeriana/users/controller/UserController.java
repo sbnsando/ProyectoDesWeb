@@ -60,7 +60,7 @@ public class UserController {
         if(userService.findByIdentityNumb(userDto.getIdentityNumb()))
             return new ResponseEntity(new Message("User exist in data base"),HttpStatus.BAD_REQUEST);
 
-        User user = new User(userDto.getIdentityNumb(),userDto.getName(),userDto.getBirthday(),userDto.getIdCity(),userDto.isAdmin());
+        User user = new User(userDto.getIdentityNumb(),userDto.getName(),userDto.getBirthday(),userDto.getIdCity(),userDto.isAdmin(),userDto.isActive());
         try{
             userService.save(user);
             return new ResponseEntity(new Message("User saved"), HttpStatus.OK);
@@ -86,6 +86,7 @@ public class UserController {
         user.setBirthday(userDto.getBirthday());
         user.setIdCity(userDto.getIdCity());
         user.setAdmin(userDto.isAdmin());
+        user.setActive(userDto.isActive());
         try{
             userService.save(user);
             return new ResponseEntity(new Message("User saved"), HttpStatus.OK);
@@ -100,11 +101,8 @@ public class UserController {
     public ResponseEntity<?> delete(@PathVariable("id")int id){
         if(!userService.existById(id))
             return new ResponseEntity(new Message("not exist"), HttpStatus.NOT_FOUND);
-        try{
-            userService.delete(id);
-            return new ResponseEntity(new Message("User deleted"), HttpStatus.OK);
-        }catch (Exception e){
-            return new ResponseEntity(new Message("Error"+e), HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+        User user = userService.getOneById(id);
+        user.setActive(false);
+        return new ResponseEntity(new Message("User deleted"), HttpStatus.OK);
     }
 }
