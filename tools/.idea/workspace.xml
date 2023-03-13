@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e29fc7d-04d3-469c-8585-76d0202466de" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brands/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../brands/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brands/src/main/java/edu/javeriana/brands/dto/BrandDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brands/src/main/java/edu/javeriana/brands/dto/Message.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +37,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/Universidad/2023-1/Desarrollo Web/Proyecto/tools"
+    "last_opened_file_path": "D:/Universidad/2023-1/Desarrollo Web/Proyecto/users"
   }
 }]]></component>
   <component name="RecentsManager">
