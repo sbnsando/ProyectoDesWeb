@@ -1,7 +1,5 @@
 package edu.javeriana.users.dto;
 
-import jakarta.persistence.Column;
-
 import java.util.Date;
 
 public class UserDto {

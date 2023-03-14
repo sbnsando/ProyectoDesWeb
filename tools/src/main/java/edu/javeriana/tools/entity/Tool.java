@@ -2,8 +2,6 @@ package edu.javeriana.tools.entity;
 
 import jakarta.persistence.*;
 
-import java.util.List;
-
 @Entity
 @Table(name = "tools")
 public class Tool {

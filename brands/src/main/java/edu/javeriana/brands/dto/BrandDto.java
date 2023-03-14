@@ -1,7 +1,5 @@
 package edu.javeriana.brands.dto;
 
-import java.util.List;
-
 public class BrandDto {
 
     private  String name;

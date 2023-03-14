@@ -2,8 +2,6 @@ package edu.javeriana.brands.entity;
 
 import jakarta.persistence.*;
 
-import java.util.List;
-
 @Entity
 @Table(name = "brands")
 public class Brand {

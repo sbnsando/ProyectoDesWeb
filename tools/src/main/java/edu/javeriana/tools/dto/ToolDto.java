@@ -1,7 +1,5 @@
 package edu.javeriana.tools.dto;
 
-import java.util.List;
-
 public class ToolDto {
 
     private int idBrand;
