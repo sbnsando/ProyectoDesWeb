@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80a83589-6a08-45c9-8880-bca0fb1cee4e" name="Changes" comment="Corrección de errores">
+    <list default="true" id="80a83589-6a08-45c9-8880-bca0fb1cee4e" name="Changes" comment="Correccion de eliminado de usuario">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/javeriana/users/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/javeriana/users/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/javeriana/users/dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/javeriana/users/dto/UserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/javeriana/users/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/javeriana/users/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,13 +33,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Universidad/2023-1/Desarrollo Web/Proyecto/users&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "D:/Universidad/2023-1/Desarrollo Web/Proyecto"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Universidad\2023-1\Desarrollo Web\Proyecto\users\src\main\java\edu\javeriana\users" />
@@ -63,7 +61,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678680474337</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Correccion de eliminado de usuario">
+      <created>1678728747718</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1678728747718</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -79,6 +84,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Corrección de errores" />
-    <option name="LAST_COMMIT_MESSAGE" value="Corrección de errores" />
+    <MESSAGE value="Correccion de eliminado de usuario" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correccion de eliminado de usuario" />
   </component>
 </project>

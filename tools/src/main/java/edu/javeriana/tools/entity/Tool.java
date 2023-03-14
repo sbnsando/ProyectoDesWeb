@@ -11,7 +11,7 @@ public class Tool {
     public Tool() {
     }
 
-    public Tool(int idBrand, String name, String description, int price, String img, String country, List<Integer> listIdCities, int quantity) {
+    public Tool(int idBrand, String name, String description, int price, String img, String country, String listIdCities, int quantity) {
         this.idBrand = idBrand;
         this.name = name;
         this.description = description;
@@ -45,7 +45,7 @@ public class Tool {
     private String country;
 
     @Column(name = "cities")
-    private List<Integer> listIdCities;
+    private String listIdCities;
 
     @Column(name = "quantity")
     private int quantity;
@@ -106,11 +106,11 @@ public class Tool {
         this.img = img;
     }
 
-    public List<Integer> getListIdCities() {
+    public String getListIdCities() {
         return listIdCities;
     }
 
-    public void setListIdCities(List<Integer> listIdCities) {
+    public void setListIdCities(String listIdCities) {
         this.listIdCities = listIdCities;
     }
 

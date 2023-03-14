@@ -16,14 +16,14 @@ public class ToolDto {
 
     private String country;
 
-    private List<Integer> listIdCities;
+    private String listIdCities;
 
     private int quantity;
 
     public ToolDto(){
     }
 
-    public ToolDto(int idBrand, String name, String description, int price, String img, String country, List<Integer> listIdCities, int quantity) {
+    public ToolDto(int idBrand, String name, String description, int price, String img, String country, String listIdCities, int quantity) {
         this.idBrand = idBrand;
         this.name = name;
         this.description = description;
@@ -82,11 +82,11 @@ public class ToolDto {
         this.price = price;
     }
 
-    public List<Integer> getListIdCities() {
+    public String getListIdCities() {
         return listIdCities;
     }
 
-    public void setListIdCities(List<Integer> listIdCities) {
+    public void setListIdCities(String listIdCities) {
         this.listIdCities = listIdCities;
     }
 
