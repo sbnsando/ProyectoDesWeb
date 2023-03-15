@@ -1,4 +1,4 @@
 # ProyectoDesWeb
 # INTEGRANTES: 
-##- Esteban Pedraza 
-##- Sebastian Sandoval
+## - Esteban Pedraza 
+## - Sebastian Sandoval
