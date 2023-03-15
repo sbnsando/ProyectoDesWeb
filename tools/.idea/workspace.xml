@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e29fc7d-04d3-469c-8585-76d0202466de" name="Changes" comment="añadidida propiedad puerto 8081 en ms tool">
+    <list default="true" id="8e29fc7d-04d3-469c-8585-76d0202466de" name="Changes" comment="Primera entrega">
       <change beforePath="$PROJECT_DIR$/../users/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../users/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -101,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678760308947</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Primera entrega">
+      <created>1678920157700</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1678920157700</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -120,7 +127,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="añadidida propiedad puerto 8081 en ms tool" />
-    <option name="LAST_COMMIT_MESSAGE" value="añadidida propiedad puerto 8081 en ms tool" />
+    <MESSAGE value="Primera entrega" />
+    <option name="LAST_COMMIT_MESSAGE" value="Primera entrega" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
