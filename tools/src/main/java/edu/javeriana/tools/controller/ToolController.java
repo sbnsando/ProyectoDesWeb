@@ -59,7 +59,7 @@ public class ToolController {
             return new ResponseEntity(new Message("Price must be greater than zero"),HttpStatus.BAD_REQUEST);
         if(toolService.existByName(toolDto.getName()))
             return new ResponseEntity(new Message("Product exist in data base"),HttpStatus.BAD_REQUEST);
-        Tool tool = new Tool(toolDto.getIdBrand(), toolDto.getName(), toolDto.getDescription(), toolDto.getPrice(),toolDto.getImg(), toolDto.getCountry(), toolDto.getListIdCities(), toolDto.getQuantity());
+        Tool tool = new Tool(toolDto.getIdBrand(), toolDto.getName(), toolDto.getDescription(), toolDto.getPrice(),toolDto.getImg(), toolDto.getCountry(), toolDto.getCities(), toolDto.getQuantity());
         try{
             toolService.save(tool);
             return new ResponseEntity(new Message("Product saved"), HttpStatus.OK);
@@ -80,10 +80,14 @@ public class ToolController {
             return new ResponseEntity(new Message("Price is required"),HttpStatus.BAD_REQUEST);
 
         Tool tool = toolService.getOneById(id);
+        tool.setIdBrand(toolDto.getIdBrand());
         tool.setName(toolDto.getName());
         tool.setPrice(toolDto.getPrice());
         tool.setDescription(toolDto.getDescription());
         tool.setCountry(toolDto.getCountry());
+        tool.setCities(toolDto.getCities());
+        tool.setQuantity(toolDto.getQuantity());
+        tool.setImg(toolDto.getImg());
         try{
             toolService.save(tool);
             return new ResponseEntity(new Message("Product saved"), HttpStatus.OK);

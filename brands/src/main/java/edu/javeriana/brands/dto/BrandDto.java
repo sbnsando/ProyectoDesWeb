@@ -4,6 +4,8 @@ public class BrandDto {
 
     private  String name;
 
+    public BrandDto(){}
+
     public BrandDto(String name) {
         this.name = name;
     }

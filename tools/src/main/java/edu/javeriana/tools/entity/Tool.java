@@ -9,14 +9,14 @@ public class Tool {
     public Tool() {
     }
 
-    public Tool(int idBrand, String name, String description, int price, String img, String country, String listIdCities, int quantity) {
+    public Tool(int idBrand, String name, String description, int price, String img, String country, String cities, int quantity) {
         this.idBrand = idBrand;
         this.name = name;
         this.description = description;
         this.price = price;
         this.img = img;
         this.country = country;
-        this.listIdCities = listIdCities;
+        this.cities = cities;
         this.quantity = quantity;
     }
 
@@ -24,7 +24,7 @@ public class Tool {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "idBrand")
+    @Column(name = "id_brand")
     private int idBrand;
 
     @Column(name = "name")
@@ -43,7 +43,7 @@ public class Tool {
     private String country;
 
     @Column(name = "cities")
-    private String listIdCities;
+    private String cities;
 
     @Column(name = "quantity")
     private int quantity;
@@ -104,12 +104,12 @@ public class Tool {
         this.img = img;
     }
 
-    public String getListIdCities() {
-        return listIdCities;
+    public String getCities() {
+        return cities;
     }
 
-    public void setListIdCities(String listIdCities) {
-        this.listIdCities = listIdCities;
+    public void setCities(String listIdCities) {
+        this.cities = listIdCities;
     }
 
     public int getQuantity() {

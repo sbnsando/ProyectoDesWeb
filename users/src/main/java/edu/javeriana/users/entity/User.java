@@ -24,7 +24,7 @@ public class User {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "identityNumb")
+    @Column(name = "identity_numb")
     private int identityNumb;
 
     @Column(name = "name")
@@ -33,7 +33,7 @@ public class User {
     @Column(name = "birthday")
     private Date birthday;
 
-    @Column(name = "idCity")
+    @Column(name = "id_city")
     private int idCity;
 
     @Column(name = "admin")

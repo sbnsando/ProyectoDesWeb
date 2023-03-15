@@ -14,21 +14,21 @@ public class ToolDto {
 
     private String country;
 
-    private String listIdCities;
+    private String cities;
 
     private int quantity;
 
     public ToolDto(){
     }
 
-    public ToolDto(int idBrand, String name, String description, int price, String img, String country, String listIdCities, int quantity) {
+    public ToolDto(int idBrand, String name, String description, int price, String img, String country, String cities, int quantity) {
         this.idBrand = idBrand;
         this.name = name;
         this.description = description;
         this.price = price;
         this.img = img;
         this.country = country;
-        this.listIdCities = listIdCities;
+        this.cities = cities;
         this.quantity = quantity;
     }
 
@@ -80,12 +80,12 @@ public class ToolDto {
         this.price = price;
     }
 
-    public String getListIdCities() {
-        return listIdCities;
+    public String getCities() {
+        return cities;
     }
 
-    public void setListIdCities(String listIdCities) {
-        this.listIdCities = listIdCities;
+    public void setCities(String cities) {
+        this.cities = cities;
     }
 
     public int getQuantity() {

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/users")
 public class UserController {
 
     @Autowired
@@ -103,6 +103,7 @@ public class UserController {
             return new ResponseEntity(new Message("not exist"), HttpStatus.NOT_FOUND);
         User user = userService.getOneById(id);
         user.setActive(false);
+        userService.save(user);
         return new ResponseEntity(new Message("User deleted"), HttpStatus.OK);
     }
 }
