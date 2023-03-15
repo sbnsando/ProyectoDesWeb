@@ -5,29 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="80a83589-6a08-45c9-8880-bca0fb1cee4e" name="Changes" comment="Correccion de eliminado de usuario">
-      <change beforePath="$PROJECT_DIR$/../brands/src/main/java/edu/javeriana/brands/dto/BrandDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../brands/src/main/java/edu/javeriana/brands/dto/BrandDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tools/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tools/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tools/src/main/java/edu/javeriana/tools/controller/ToolController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tools/src/main/java/edu/javeriana/tools/controller/ToolController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tools/src/main/java/edu/javeriana/tools/dto/ToolDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tools/src/main/java/edu/javeriana/tools/dto/ToolDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tools/src/main/java/edu/javeriana/tools/entity/Tool.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tools/src/main/java/edu/javeriana/tools/entity/Tool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tools/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../tools/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tools/target/classes/edu/javeriana/tools/ToolsApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/../tools/target/classes/edu/javeriana/tools/ToolsApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tools/target/classes/edu/javeriana/tools/controller/ToolController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../tools/target/classes/edu/javeriana/tools/controller/ToolController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tools/target/classes/edu/javeriana/tools/dto/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/../tools/target/classes/edu/javeriana/tools/dto/Message.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tools/target/classes/edu/javeriana/tools/dto/ToolDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../tools/target/classes/edu/javeriana/tools/dto/ToolDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tools/target/classes/edu/javeriana/tools/entity/Tool.class" beforeDir="false" afterPath="$PROJECT_DIR$/../tools/target/classes/edu/javeriana/tools/entity/Tool.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tools/target/classes/edu/javeriana/tools/repository/ToolRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../tools/target/classes/edu/javeriana/tools/repository/ToolRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tools/target/classes/edu/javeriana/tools/service/ToolService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../tools/target/classes/edu/javeriana/tools/service/ToolService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/javeriana/users/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/javeriana/users/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/javeriana/users/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/javeriana/users/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/javeriana/users/UsersApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/javeriana/users/UsersApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/javeriana/users/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/javeriana/users/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/javeriana/users/dto/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/javeriana/users/dto/Message.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/javeriana/users/dto/UserDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/javeriana/users/dto/UserDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/javeriana/users/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/javeriana/users/entity/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/javeriana/users/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/javeriana/users/repository/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/javeriana/users/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/javeriana/users/service/UserService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +42,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/estebanpedraza/Documents/Universidad-2023-1/DW/Proy/ProyectoDesWeb/users",
+    "last_opened_file_path": "D:/Universidad/2023-1/Desarrollo Web/Proyecto/users",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -77,7 +56,20 @@
       <recent name="D:\Universidad\2023-1\Desarrollo Web\Proyecto\users\src\main\java\edu\javeriana\users" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.UsersApplication">
+    <configuration name="UsersApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.javeriana.users.UsersApplication" />
+      <module name="users" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.javeriana.users.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UsersApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="users" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="edu.javeriana.users.UsersApplication" />
@@ -85,6 +77,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.UsersApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -132,16 +129,5 @@
     <MESSAGE value="Corrección de errores" />
     <MESSAGE value="Correccion de eliminado de usuario" />
     <option name="LAST_COMMIT_MESSAGE" value="Correccion de eliminado de usuario" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/edu/javeriana/users/controller/UserController.java</url>
-          <line>106</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
