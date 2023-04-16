@@ -1,7 +1,5 @@
 package edu.javeriana.tools.controller;
 
-import edu.javeriana.tools.dto.Message;
-import edu.javeriana.tools.dto.ToolDto;
 import edu.javeriana.tools.entity.Tool;
 import edu.javeriana.tools.service.ToolService;
 import io.micrometer.common.util.StringUtils;
@@ -33,7 +31,7 @@ public class ToolController {
     @GetMapping("/detail/{id}")
     public ResponseEntity<Tool> getById(@PathVariable("id") int id){
         if(!toolService.existById(id)){
-            return new ResponseEntity(new Message("Not exist"), HttpStatus.NOT_FOUND);
+            return new ResponseEntity("Not exist", HttpStatus.NOT_FOUND);
         }
         Tool tool = toolService.getOneById(id);
         return new ResponseEntity<Tool>(tool, HttpStatus.OK);
@@ -44,7 +42,7 @@ public class ToolController {
     public ResponseEntity<Tool> getByName(@PathVariable("name") String name){
 
         if(!toolService.existByName(name)){
-            return new ResponseEntity(new Message("Not exist"), HttpStatus.NOT_FOUND);
+            return new ResponseEntity("Not exist", HttpStatus.NOT_FOUND);
         }
         Tool tool = toolService.getOneByName(name);
         return new ResponseEntity<Tool>(tool, HttpStatus.OK);
@@ -52,47 +50,47 @@ public class ToolController {
 
 
     @PostMapping("/create")
-    public ResponseEntity<?> create(@RequestBody ToolDto toolDto){
-        if(StringUtils.isBlank(toolDto.getName()))
-            return new ResponseEntity(new Message("Name is required"),HttpStatus.BAD_REQUEST);
-        if(toolDto.getPrice()<0)
-            return new ResponseEntity(new Message("Price must be greater than zero"),HttpStatus.BAD_REQUEST);
-        if(toolService.existByName(toolDto.getName()))
-            return new ResponseEntity(new Message("Product exist in data base"),HttpStatus.BAD_REQUEST);
-        Tool tool = new Tool(toolDto.getIdBrand(), toolDto.getName(), toolDto.getDescription(), toolDto.getPrice(),toolDto.getImg(), toolDto.getCountry(), toolDto.getCities(), toolDto.getQuantity());
+    public ResponseEntity<?> create(@RequestBody Tool tool){
+        if(StringUtils.isBlank(tool.getName()))
+            return new ResponseEntity("Name is required",HttpStatus.BAD_REQUEST);
+        if(tool.getPrice()<0)
+            return new ResponseEntity("Price must be greater than zero",HttpStatus.BAD_REQUEST);
+        if(toolService.existByName(tool.getName()))
+            return new ResponseEntity("Product exist in data base",HttpStatus.BAD_REQUEST);
+        Tool toolTmp = new Tool(tool.getIdBrand(), tool.getName(), tool.getDescription(), tool.getPrice(),tool.getImg(), tool.getCountry(), tool.getCities(), tool.getQuantity());
         try{
-            toolService.save(tool);
-            return new ResponseEntity(new Message("Product saved"), HttpStatus.OK);
+            toolService.save(toolTmp);
+            return new ResponseEntity("Product saved", HttpStatus.OK);
         }catch (Exception e){
-            return new ResponseEntity(new Message("Error"+e), HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity("Error"+e, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
+    
     @PutMapping("/update/{id}")
-    public ResponseEntity<?> update(@PathVariable("id")int id, @RequestBody ToolDto toolDto){
+    public ResponseEntity<?> update(@PathVariable("id")int id, @RequestBody Tool tool){
         if(!toolService.existById(id))
-            return new ResponseEntity(new Message("not exist"), HttpStatus.NOT_FOUND);
-        if(toolService.existByName(toolDto.getName()) && toolService.getOneByName(toolDto.getName()).getId() != id)
-            return new ResponseEntity(new Message("tool exist in database"), HttpStatus.BAD_REQUEST);
-        if(StringUtils.isBlank(toolDto.getName()))
-            return new ResponseEntity(new Message("Name is required"),HttpStatus.BAD_REQUEST);
-        if((Integer) toolDto.getPrice() == null || toolDto.getPrice()<0)
-            return new ResponseEntity(new Message("Price is required"),HttpStatus.BAD_REQUEST);
+            return new ResponseEntity("not exist", HttpStatus.NOT_FOUND);
+        if(toolService.existByName(tool.getName()) && toolService.getOneByName(tool.getName()).getId() != id)
+            return new ResponseEntity("tool exist in database", HttpStatus.BAD_REQUEST);
+        if(StringUtils.isBlank(tool.getName()))
+            return new ResponseEntity("Name is required",HttpStatus.BAD_REQUEST);
+        if((Integer) tool.getPrice() == null || tool.getPrice()<0)
+            return new ResponseEntity("Price is required",HttpStatus.BAD_REQUEST);
 
-        Tool tool = toolService.getOneById(id);
-        tool.setIdBrand(toolDto.getIdBrand());
-        tool.setName(toolDto.getName());
-        tool.setPrice(toolDto.getPrice());
-        tool.setDescription(toolDto.getDescription());
-        tool.setCountry(toolDto.getCountry());
-        tool.setCities(toolDto.getCities());
-        tool.setQuantity(toolDto.getQuantity());
-        tool.setImg(toolDto.getImg());
+        Tool toolTmp = toolService.getOneById(id);
+        toolTmp.setIdBrand(tool.getIdBrand());
+        toolTmp.setName(tool.getName());
+        toolTmp.setPrice(tool.getPrice());
+        toolTmp.setDescription(tool.getDescription());
+        toolTmp.setCountry(tool.getCountry());
+        toolTmp.setCities(tool.getCities());
+        toolTmp.setQuantity(tool.getQuantity());
+        toolTmp.setImg(tool.getImg());
         try{
-            toolService.save(tool);
-            return new ResponseEntity(new Message("Product saved"), HttpStatus.OK);
+            toolService.save(toolTmp);
+            return new ResponseEntity("Product saved", HttpStatus.OK);
         }catch (Exception e){
-            return new ResponseEntity(new Message("Error"+e), HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity("Error"+e, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
@@ -100,12 +98,12 @@ public class ToolController {
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> delete(@PathVariable("id")int id){
         if(!toolService.existById(id))
-            return new ResponseEntity(new Message("not exist"), HttpStatus.NOT_FOUND);
+            return new ResponseEntity("not exist", HttpStatus.NOT_FOUND);
         try{
             toolService.delete(id);
-            return new ResponseEntity(new Message("Product deleted"), HttpStatus.OK);
+            return new ResponseEntity("Product deleted", HttpStatus.OK);
         }catch (Exception e){
-            return new ResponseEntity(new Message("Error"+e), HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity("Error"+e, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 }
