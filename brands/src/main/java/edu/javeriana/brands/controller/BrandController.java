@@ -1,8 +1,6 @@
 package edu.javeriana.brands.controller;
 
 import edu.javeriana.brands.service.BrandService;
-import edu.javeriana.brands.dto.Message;
-import edu.javeriana.brands.dto.BrandDto;
 import edu.javeriana.brands.entity.Brand;
 import io.micrometer.common.util.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +31,7 @@ public class BrandController {
     @GetMapping("/detail/{id}")
     public ResponseEntity<Brand> getById(@PathVariable("id") int id){
         if(!brandService.existById(id)){
-            return new ResponseEntity(new Message("Not exist"), HttpStatus.NOT_FOUND);
+            return new ResponseEntity("Not exist", HttpStatus.NOT_FOUND);
         }
         Brand brand = brandService.getOneById(id);
         return new ResponseEntity<Brand>(brand, HttpStatus.OK);
@@ -44,7 +42,7 @@ public class BrandController {
     public ResponseEntity<Brand> getByName(@PathVariable("name") String name){
 
         if(!brandService.existByName(name)){
-            return new ResponseEntity(new Message("Not exist"), HttpStatus.NOT_FOUND);
+            return new ResponseEntity("Not exist", HttpStatus.NOT_FOUND);
         }
         Brand Brand = brandService.getOneByName(name);
         return new ResponseEntity<Brand>(Brand, HttpStatus.OK);
@@ -52,36 +50,36 @@ public class BrandController {
 
 
     @PostMapping("/create")
-    public ResponseEntity<?> create(@RequestBody BrandDto brandDto){
-        if(StringUtils.isBlank(brandDto.getName()))
-            return new ResponseEntity(new Message("Name is required"),HttpStatus.BAD_REQUEST);
-        if(brandService.existByName(brandDto.getName()))
-            return new ResponseEntity(new Message("Brand exist in data base"),HttpStatus.BAD_REQUEST);
-        Brand Brand = new Brand(brandDto.getName());
+    public ResponseEntity<?> create(@RequestBody Brand brand){
+        if(StringUtils.isBlank(brand.getName()))
+            return new ResponseEntity("Name is required",HttpStatus.BAD_REQUEST);
+        if(brandService.existByName(brand.getName()))
+            return new ResponseEntity("Brand exist in data base",HttpStatus.BAD_REQUEST);
+        Brand brandTmp = new Brand(brand.getName());
         try{
-            brandService.save(Brand);
-            return new ResponseEntity(new Message("Product saved"), HttpStatus.OK);
+            brandService.save(brandTmp);
+            return new ResponseEntity("Brand saved", HttpStatus.OK);
         }catch (Exception e){
-            return new ResponseEntity(new Message("Error"+e), HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity("Error"+e, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<?> update(@PathVariable("id")int id, @RequestBody BrandDto brandDto){
+    public ResponseEntity<?> update(@PathVariable("id")int id, @RequestBody Brand brand){
         if(!brandService.existById(id))
-            return new ResponseEntity(new Message("not exist"), HttpStatus.NOT_FOUND);
-        if(brandService.existByName(brandDto.getName()) && brandService.getOneByName(brandDto.getName()).getId() != id)
-            return new ResponseEntity(new Message("Brand exist in database"), HttpStatus.BAD_REQUEST);
-        if(StringUtils.isBlank(brandDto.getName()))
-            return new ResponseEntity(new Message("Name is required"),HttpStatus.BAD_REQUEST);
+            return new ResponseEntity("not exist", HttpStatus.NOT_FOUND);
+        if(brandService.existByName(brand.getName()) && brandService.getOneByName(brand.getName()).getId() != id)
+            return new ResponseEntity("Brand exist in data base", HttpStatus.BAD_REQUEST);
+        if(StringUtils.isBlank(brand.getName()))
+            return new ResponseEntity("Name is required",HttpStatus.BAD_REQUEST);
 
-        Brand brand = brandService.getOneById(id);
-        brand.setName(brandDto.getName());;
+        Brand brandTmp = brandService.getOneById(id);
+        brandTmp.setName(brand.getName());;
         try{
-            brandService.save(brand);
-            return new ResponseEntity(new Message("Product saved"), HttpStatus.OK);
+            brandService.save(brandTmp);
+            return new ResponseEntity("Brand saved", HttpStatus.OK);
         }catch (Exception e){
-            return new ResponseEntity(new Message("Error"+e), HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity("Error"+e, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
@@ -89,12 +87,12 @@ public class BrandController {
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> delete(@PathVariable("id")int id){
         if(!brandService.existById(id))
-            return new ResponseEntity(new Message("not exist"), HttpStatus.NOT_FOUND);
+            return new ResponseEntity("not exist", HttpStatus.NOT_FOUND);
         try{
             brandService.delete(id);
-            return new ResponseEntity(new Message("Product deleted"), HttpStatus.OK);
+            return new ResponseEntity("Brand deleted", HttpStatus.OK);
         }catch (Exception e){
-            return new ResponseEntity(new Message("Error"+e), HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity("Error"+e, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 }
