@@ -1,0 +1,14 @@
+<div class="row m-4">
+  <div *ngFor="let item of items"  class="col-sm-4 mt-4">
+    <div class="card">
+      <img class="card-img-top" src={{item.imgSrc}} alt="Card image">
+      <div class="card-body">
+        <h5 class="card-title">{{item.title}}</h5>
+        <span class="card-title text-primary">{{item.brand}}</span>
+        <p class="card-text">{{item.desc}}</p>
+
+        <button class="btn btn-primary">Detalles</button>
+      </div>
+    </div>
+  </div>
+</div>
