@@ -12,32 +12,26 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#"></a>
+                    <a class="nav-link" aria-current="page" [routerLink]="['/home']">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" aria-current="page" [routerLink]="['/search']">Buscar</a>
                 </li>
-
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        <img src="../../../../assets/img/user_image.png" width="30" alt="User">
-                        "Usuario"
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Usuarios</a></li>
-                        <li><a class="dropdown-item" href="#">Herramientas</a></li>
-                        <li><a class="dropdown-item" href="#">Logout</a></li>
-                    </ul>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" [routerLink]="['/users']">Usuarios</a>
                 </li>
-
             </ul>
-            
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success text me-3" type="submit">Search</button>
-            </form>
-            
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <img src="../../../../assets/img/user_image.png" width="30" alt="User">
+                    "Usuario"
+                </a>
+                <ul class="dropdown-menu">
+                    <li class="bg-danger" ><a class="dropdown-item text-white" [routerLink]="['/login']">Logout</a></li>
+                </ul>
+            </li>
+            <a class="btn btn-primary ms-5" aria-current="page" [routerLink]="['/login']">Log in</a>
         </div>
     </div>
 </nav>

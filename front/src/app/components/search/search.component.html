@@ -1,1 +1,38 @@
-<p>search works!</p>
+<app-nav-bar></app-nav-bar>
+
+<div class="container m-5">
+
+    <h1>Buscar Herramienta</h1>
+    <hr class="hr">
+
+    <div class="row mb-5">
+        <div class="col mt-3">
+            <input type="text" class="form-control" id="inputText" aria-describedby="inputText" placeholder="Buscar por...">
+        </div>
+        <div class="col-auto mt-3">
+            <select class="form-select" aria-label="Select option">
+                <option selected value="1">Nombre</option>
+                <option value="2">Marca</option>
+              </select>
+        </div>
+        <div class="col-6 mt-3">
+            <button class="btn btn-primary">Buscar</button>
+        </div>
+    </div>
+
+    <h2>Resultados</h2>
+    <hr class="hr">
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-warning">
+                No existen resultados con el termino: "termino"
+            </div>
+        </div>
+    </div>
+
+    <app-tool-card [items]="toolsArray"></app-tool-card>
+
+</div>
+
+<app-footer></app-footer>
