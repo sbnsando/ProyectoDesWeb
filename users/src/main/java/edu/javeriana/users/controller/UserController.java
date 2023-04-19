@@ -6,6 +6,8 @@ import io.micrometer.common.util.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,6 +18,8 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
+    private PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
     @GetMapping("/")
     public String hola(){
@@ -61,7 +65,7 @@ public class UserController {
         User temp = new User();
         temp.setName(user.getName());
         temp.setEmail(user.getEmail());
-        temp.setPassword(user.getPassword());
+        temp.setPassword(passwordEncoder.encode(user.getPassword()));
         temp.setLogin(user.getLogin());
         temp.setToken(user.getToken());
         temp.setBirthdate(user.getBirthdate());
@@ -90,7 +94,7 @@ public class UserController {
         User temp = userService.getOneById(id);
         temp.setName(user.getName());
         temp.setEmail(user.getEmail());
-        temp.setPassword(user.getPassword());
+        temp.setPassword(passwordEncoder.encode(user.getPassword()));
         temp.setLogin(user.getLogin());
         temp.setToken(user.getToken());
         temp.setBirthdate(user.getBirthdate());

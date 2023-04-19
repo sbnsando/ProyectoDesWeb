@@ -33,14 +33,14 @@ public class UserService {
 
     public User getOneByEmail(String email){
         User user = null;
-        user = userRepository.findByEmail(email);
+        user = userRepository.findOneByEmail(email);
 
         return user;
     }
 
     public boolean findByEmail(String email){
         User user = null;
-        user = userRepository.findByEmail(email);
+        user = userRepository.findOneByEmail(email);
 
         return user==null ? false : true;
     }

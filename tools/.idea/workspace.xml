@@ -5,26 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e29fc7d-04d3-469c-8585-76d0202466de" name="Changes" comment="Primera entrega">
-      <change beforePath="$PROJECT_DIR$/../brands/src/main/java/edu/javeriana/brands/controller/BrandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../brands/src/main/java/edu/javeriana/brands/controller/BrandController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../security/src/main/java/edu/javeriana/security/controller/UserRestController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../security/src/main/java/edu/javeriana/security/entity/JWTAuthorizationFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../security/src/main/java/edu/javeriana/security/entity/WebSecurityConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../users/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../users/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../users/src/main/java/edu/javeriana/users/security/AuthCredetials.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../users/src/main/java/edu/javeriana/users/security/JWTAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../users/src/main/java/edu/javeriana/users/security/JWTAuthorizationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../users/src/main/java/edu/javeriana/users/security/TokenUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../users/src/main/java/edu/javeriana/users/security/UserDetailServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../users/src/main/java/edu/javeriana/users/security/UserDetailsImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../users/src/main/java/edu/javeriana/users/security/WebSecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../users/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../users/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../users/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../users/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../users/src/main/java/edu/javeriana/users/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../users/src/main/java/edu/javeriana/users/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../users/src/main/java/edu/javeriana/users/dto/Message.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../users/src/main/java/edu/javeriana/users/dto/UserDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../users/src/main/java/edu/javeriana/users/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../users/src/main/java/edu/javeriana/users/entity/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../users/src/main/java/edu/javeriana/users/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../users/src/main/java/edu/javeriana/users/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../users/src/main/java/edu/javeriana/users/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../users/src/main/java/edu/javeriana/users/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../users/target/classes/edu/javeriana/users/UsersApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/../users/target/classes/edu/javeriana/users/UsersApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../users/target/classes/edu/javeriana/users/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../users/target/classes/edu/javeriana/users/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../users/target/classes/edu/javeriana/users/dto/Message.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../users/target/classes/edu/javeriana/users/dto/UserDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../users/target/classes/edu/javeriana/users/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/../users/target/classes/edu/javeriana/users/entity/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../users/target/classes/edu/javeriana/users/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../users/target/classes/edu/javeriana/users/repository/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../users/target/classes/edu/javeriana/users/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../users/target/classes/edu/javeriana/users/service/UserService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
