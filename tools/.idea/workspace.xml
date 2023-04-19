@@ -5,20 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04293594-333b-429c-98cb-225d421575e9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../brands/src/main/java/edu/javeriana/brands/controller/BrandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../brands/src/main/java/edu/javeriana/brands/controller/BrandController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../front/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../front/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/app/components/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/components/login/login.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../front/src/app/components/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/components/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/app/components/login/login.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/components/login/login.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/app/services/tools.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/services/tools.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../users/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../users/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../users/src/main/java/edu/javeriana/users/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../users/src/main/java/edu/javeriana/users/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../users/src/main/java/edu/javeriana/users/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../users/src/main/java/edu/javeriana/users/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../users/src/main/java/edu/javeriana/users/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../users/src/main/java/edu/javeriana/users/security/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../users/target/classes/edu/javeriana/users/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../users/target/classes/edu/javeriana/users/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../users/target/classes/edu/javeriana/users/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/../users/target/classes/edu/javeriana/users/entity/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../users/target/classes/edu/javeriana/users/security/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/../users/target/classes/edu/javeriana/users/security/WebSecurityConfig.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
