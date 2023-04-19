@@ -7,9 +7,20 @@ import { HttpClient } from '@angular/common/http';
 export class ToolsService {
   constructor(private http: HttpClient) { }
 
-  getAllTools(){
-    // this.http.get('').subscribe(data ->{
-    //   console.log(data);
-    // });
+
+  getAllTools():Promise<Object>{
+    return new Promise((resolve, reject) => {
+      this.http.get('http://localhost:8081/tool/list').subscribe(data => {
+        resolve(data);
+      });
+    });
   }
+  getAllBrands():Promise<Object>{
+    return new Promise((resolve, reject) => {
+      this.http.get('http://localhost:8080/brand/list').subscribe(data => {
+        resolve(data);
+      });
+    });
+  }
+
 }

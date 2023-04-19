@@ -22,6 +22,7 @@ public class BrandController {
         return "Hola";
     }
 
+    @CrossOrigin
     @GetMapping("/list")
     public ResponseEntity<List<Brand>> list(){
         List<Brand> list = brandService.list();
