@@ -22,6 +22,7 @@ public class ToolController {
         return "Hola";
     }
 
+    @CrossOrigin
     @GetMapping("/list")
     public ResponseEntity<List<Tool>> list(){
         List<Tool> list = toolService.list();
