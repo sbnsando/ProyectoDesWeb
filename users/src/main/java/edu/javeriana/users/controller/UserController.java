@@ -1,7 +1,5 @@
 package edu.javeriana.users.controller;
 
-import edu.javeriana.users.dto.Message;
-import edu.javeriana.users.dto.UserDto;
 import edu.javeriana.users.entity.User;
 import edu.javeriana.users.service.UserService;
 import io.micrometer.common.util.StringUtils;
@@ -28,7 +26,7 @@ public class UserController {
     public ResponseEntity<List<User>> list(){
         List<User> list = userService.list();
         if(list.isEmpty()){
-            return new ResponseEntity(new Message("No users registered in the system."), HttpStatus.OK);
+            return new ResponseEntity("No users registered in the system.", HttpStatus.OK);
         }
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
@@ -36,7 +34,7 @@ public class UserController {
     @GetMapping("/detail/{id}")
     public ResponseEntity<User> getById(@PathVariable("id") int id){
         if(!userService.existById(id)){
-            return new ResponseEntity(new Message("Not exist"), HttpStatus.NOT_FOUND);
+            return new ResponseEntity("Not exist", HttpStatus.NOT_FOUND);
         }
         User user = userService.getOneById(id);
         return new ResponseEntity<User>(user, HttpStatus.OK);
@@ -46,7 +44,7 @@ public class UserController {
     @GetMapping("/detailname/{name}")
     public ResponseEntity<User> getByName(@PathVariable("name") String name){
         if(!userService.existByName(name)){
-            return new ResponseEntity(new Message("Not exist"), HttpStatus.NOT_FOUND);
+            return new ResponseEntity("Not exist", HttpStatus.NOT_FOUND);
         }
         User user = userService.getOneByName(name);
         return new ResponseEntity<User>(user, HttpStatus.OK);
@@ -54,44 +52,56 @@ public class UserController {
 
 
     @PostMapping("/create")
-    public ResponseEntity<?> create(@RequestBody UserDto userDto){
-        if(StringUtils.isBlank(userDto.getName()))
-            return new ResponseEntity(new Message("Name is required"),HttpStatus.BAD_REQUEST);
-        if(userService.findByIdentityNumb(userDto.getIdentityNumb()))
-            return new ResponseEntity(new Message("User exist in data base"),HttpStatus.BAD_REQUEST);
+    public ResponseEntity<?> create(@RequestBody User user){
+        if(StringUtils.isBlank(user.getName()))
+            return new ResponseEntity("Name is required",HttpStatus.BAD_REQUEST);
+        if(userService.findByEmail(user.getEmail()))
+            return new ResponseEntity("User exist in data base",HttpStatus.BAD_REQUEST);
 
-        User user = new User(userDto.getIdentityNumb(),userDto.getName(),userDto.getBirthday(),userDto.getIdCity(),userDto.isAdmin(),userDto.isActive());
+        User temp = new User();
+        temp.setName(user.getName());
+        temp.setEmail(user.getEmail());
+        temp.setPassword(user.getPassword());
+        temp.setLogin(user.getLogin());
+        temp.setToken(user.getToken());
+        temp.setBirthdate(user.getBirthdate());
+        temp.setId_city(user.getId_city());
+        temp.setAdmin(user.isAdmin());
+        temp.setActive(user.isActive());
         try{
-            userService.save(user);
-            return new ResponseEntity(new Message("User saved"), HttpStatus.OK);
+            userService.save(temp);
+            return new ResponseEntity("User saved", HttpStatus.OK);
         }catch (Exception e){
-            return new ResponseEntity(new Message("Error"+e), HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity("Error"+e, HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<?> update(@PathVariable("id")int id, @RequestBody UserDto userDto){
+    public ResponseEntity<?> update(@PathVariable("id")int id, @RequestBody User user){
 
         if(!userService.existById(id))
-            return new ResponseEntity(new Message("not exist"), HttpStatus.NOT_FOUND);
-        if(userService.existByName(userDto.getName()) && userService.getOneByName(userDto.getName()).getId() != id)
-            return new ResponseEntity(new Message("user exist in database"), HttpStatus.BAD_REQUEST);
-        if(StringUtils.isBlank(userDto.getName()))
-            return new ResponseEntity(new Message("Name is required"),HttpStatus.BAD_REQUEST);
+            return new ResponseEntity("not exist", HttpStatus.NOT_FOUND);
+        if(userService.existByName(user.getName()) && userService.getOneByName(user.getName()).getId() != id)
+            return new ResponseEntity("user exist in database", HttpStatus.BAD_REQUEST);
+        if(StringUtils.isBlank(user.getName()))
+            return new ResponseEntity("Name is required",HttpStatus.BAD_REQUEST);
 
-        User user = userService.getOneById(id);
-        user.setIdentityNumb(userDto.getIdentityNumb());
-        user.setName(userDto.getName());
-        user.setBirthday(userDto.getBirthday());
-        user.setIdCity(userDto.getIdCity());
-        user.setAdmin(userDto.isAdmin());
-        user.setActive(userDto.isActive());
+        User temp = userService.getOneById(id);
+        temp.setName(user.getName());
+        temp.setEmail(user.getEmail());
+        temp.setPassword(user.getPassword());
+        temp.setLogin(user.getLogin());
+        temp.setToken(user.getToken());
+        temp.setBirthdate(user.getBirthdate());
+        temp.setId_city(user.getId_city());
+        temp.setAdmin(user.isAdmin());
+        temp.setActive(user.isActive());
         try{
-            userService.save(user);
-            return new ResponseEntity(new Message("User saved"), HttpStatus.OK);
+            userService.save(temp);
+            return new ResponseEntity("User saved", HttpStatus.OK);
         }catch (Exception e){
-            return new ResponseEntity(new Message("Error"+e), HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity("Error"+e, HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
     }
@@ -100,10 +110,10 @@ public class UserController {
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> delete(@PathVariable("id")int id){
         if(!userService.existById(id))
-            return new ResponseEntity(new Message("not exist"), HttpStatus.NOT_FOUND);
+            return new ResponseEntity("not exist", HttpStatus.NOT_FOUND);
         User user = userService.getOneById(id);
         user.setActive(false);
         userService.save(user);
-        return new ResponseEntity(new Message("User deleted"), HttpStatus.OK);
+        return new ResponseEntity("User deleted", HttpStatus.OK);
     }
 }

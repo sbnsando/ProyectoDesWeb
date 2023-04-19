@@ -31,16 +31,16 @@ public class UserService {
         return user;
     }
 
-    public User getOneByIdentityNumb(int identityNumb){
+    public User getOneByEmail(String email){
         User user = null;
-        user = userRepository.findByIdentityNumb(identityNumb);
+        user = userRepository.findByEmail(email);
 
         return user;
     }
 
-    public boolean findByIdentityNumb(int identityNumb){
+    public boolean findByEmail(String email){
         User user = null;
-        user = userRepository.findByIdentityNumb(identityNumb);
+        user = userRepository.findByEmail(email);
 
         return user==null ? false : true;
     }
@@ -55,11 +55,6 @@ public class UserService {
     public void save(User User){
 
         userRepository.save(User);
-    }
-
-    public void delete(int id){
-
-        userRepository.deleteById(id);
     }
 
     public boolean existById(int id){

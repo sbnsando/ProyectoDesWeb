@@ -5,7 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e29fc7d-04d3-469c-8585-76d0202466de" name="Changes" comment="Primera entrega">
+      <change beforePath="$PROJECT_DIR$/../brands/src/main/java/edu/javeriana/brands/controller/BrandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../brands/src/main/java/edu/javeriana/brands/controller/BrandController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../security/src/main/java/edu/javeriana/security/controller/UserRestController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../security/src/main/java/edu/javeriana/security/entity/JWTAuthorizationFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../security/src/main/java/edu/javeriana/security/entity/WebSecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../users/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../users/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../users/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../users/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../users/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../users/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../users/src/main/java/edu/javeriana/users/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../users/src/main/java/edu/javeriana/users/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../users/src/main/java/edu/javeriana/users/dto/Message.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../users/src/main/java/edu/javeriana/users/dto/UserDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../users/src/main/java/edu/javeriana/users/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../users/src/main/java/edu/javeriana/users/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../users/src/main/java/edu/javeriana/users/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../users/src/main/java/edu/javeriana/users/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../users/src/main/java/edu/javeriana/users/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../users/src/main/java/edu/javeriana/users/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../users/target/classes/edu/javeriana/users/UsersApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/../users/target/classes/edu/javeriana/users/UsersApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../users/target/classes/edu/javeriana/users/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../users/target/classes/edu/javeriana/users/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../users/target/classes/edu/javeriana/users/dto/Message.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../users/target/classes/edu/javeriana/users/dto/UserDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../users/target/classes/edu/javeriana/users/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/../users/target/classes/edu/javeriana/users/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../users/target/classes/edu/javeriana/users/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../users/target/classes/edu/javeriana/users/repository/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../users/target/classes/edu/javeriana/users/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../users/target/classes/edu/javeriana/users/service/UserService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,25 +51,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Universidad/2023-1/Desarrollo Web/Proyecto/users",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "spring.configuration.checksum": "4a931512ce65bdc9ca6808adf92d8783",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Universidad/2023-1/Desarrollo Web/Proyecto/users&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;4a931512ce65bdc9ca6808adf92d8783&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Universidad\2023-1\Desarrollo Web\Proyecto\tools\src\main\java\edu\javeriana\tools" />
@@ -135,12 +154,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/edu/javeriana/tools/controller/ToolController.java</url>
-          <line>61</line>
+          <line>59</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/edu/javeriana/tools/controller/ToolController.java</url>
-          <line>81</line>
+          <line>79</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
