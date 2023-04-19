@@ -22,7 +22,7 @@ public class BrandController {
         return "Hola";
     }
 
-    @CrossOrigin
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/list")
     public ResponseEntity<List<Brand>> list(){
         List<Brand> list = brandService.list();

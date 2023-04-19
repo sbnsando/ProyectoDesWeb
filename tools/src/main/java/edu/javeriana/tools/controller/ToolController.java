@@ -22,7 +22,7 @@ public class ToolController {
         return "Hola";
     }
 
-    @CrossOrigin
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/list")
     public ResponseEntity<List<Tool>> list(){
         List<Tool> list = toolService.list();

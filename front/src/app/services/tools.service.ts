@@ -11,7 +11,7 @@ export class ToolsService {
   getAllTools(): Promise<Object> {
     return new Promise((resolve, reject) => {
       this.http.get('http://localhost:8081/tool/list').subscribe(data => {
-        resolve(data);
+        resolve(data); 
       });
     });
   }
