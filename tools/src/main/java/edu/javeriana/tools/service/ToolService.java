@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @Transactional
@@ -15,6 +16,24 @@ public class ToolService {
 
     @Autowired
     ToolRepository toolRepository;
+
+    public List<Tool> filterByName(String name){
+        List<Tool> tools = new ArrayList<>();
+        toolRepository.findAll().forEach(tools::add);
+        tools = tools.stream()
+                .filter(t -> t.getName().toLowerCase().contains(name))
+                .collect(Collectors.toList());
+        return tools;
+    }
+
+    public List<Tool> filterByBrandId(int brandId){
+        List<Tool> tools = new ArrayList<>();
+        toolRepository.findAll().forEach(tools::add);
+        tools = tools.stream()
+                .filter(t -> t.getIdBrand() == brandId)
+                .collect(Collectors.toList());
+        return tools;
+    }
 
     public List<Tool> list(){
         List<Tool> tools = new ArrayList<>();

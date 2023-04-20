@@ -107,4 +107,18 @@ public class ToolController {
             return new ResponseEntity("Error"+e, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+    @CrossOrigin
+    @GetMapping("/filter")
+    public ResponseEntity<List<Tool>> filterByName(@RequestParam(value="name") String name){
+        List<Tool> list = toolService.filterByName(name);
+        return new ResponseEntity<>(list, HttpStatus.OK);
+    }
+
+    @CrossOrigin
+    @GetMapping("/filterByBrand")
+    public ResponseEntity<List<Tool>> filterByBrandId(@RequestParam(value="brandId") int brandId){
+        List<Tool> list = toolService.filterByBrandId(brandId);
+        return new ResponseEntity<>(list, HttpStatus.OK);
+    }
 }
