@@ -3,6 +3,8 @@ package edu.javeriana.tools.service;
 import edu.javeriana.tools.entity.Tool;
 import edu.javeriana.tools.repository.ToolRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,10 +20,11 @@ public class ToolService {
     ToolRepository toolRepository;
 
     public List<Tool> filterByName(String name){
+        String lowerCName = name.toLowerCase();
         List<Tool> tools = new ArrayList<>();
         toolRepository.findAll().forEach(tools::add);
         tools = tools.stream()
-                .filter(t -> t.getName().toLowerCase().contains(name))
+                .filter(t -> t.getName().toLowerCase().contains(lowerCName))
                 .collect(Collectors.toList());
         return tools;
     }
@@ -71,5 +74,9 @@ public class ToolService {
 
     public boolean existByName(String name){
         return toolRepository.findByName(name) == null ? false : true;
+    }
+
+    public Page<Tool> findAllPaged(Pageable pageable){
+        return toolRepository.findAll(pageable);
     }
 }

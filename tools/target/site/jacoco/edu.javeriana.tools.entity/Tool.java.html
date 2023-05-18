@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Tool.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">tools</a> &gt; <a href="index.source.html" class="el_package">edu.javeriana.tools.entity</a> &gt; <span class="el_source">Tool.java</span></div><h1>Tool.java</h1><pre class="source lang-java linenums">package edu.javeriana.tools.entity;
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = &quot;tools&quot;)
+public class Tool {
+
+<span class="nc" id="L9">    public Tool() {</span>
+<span class="nc" id="L10">    }</span>
+
+<span class="nc" id="L12">    public Tool(int idBrand, String name, String description, int price, String img, String country, String cities, int quantity) {</span>
+<span class="nc" id="L13">        this.idBrand = idBrand;</span>
+<span class="nc" id="L14">        this.name = name;</span>
+<span class="nc" id="L15">        this.description = description;</span>
+<span class="nc" id="L16">        this.price = price;</span>
+<span class="nc" id="L17">        this.img = img;</span>
+<span class="nc" id="L18">        this.country = country;</span>
+<span class="nc" id="L19">        this.cities = cities;</span>
+<span class="nc" id="L20">        this.quantity = quantity;</span>
+<span class="nc" id="L21">    }</span>
+
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private int id;
+
+    @Column(name = &quot;id_brand&quot;)
+    private int idBrand;
+
+    @Column(name = &quot;name&quot;)
+    private  String name;
+
+    @Column(name = &quot;description&quot;)
+    private String description;
+
+    @Column(name = &quot;price&quot;)
+    private int price;
+
+    @Column(name = &quot;img&quot;)
+    private String img;
+
+    @Column(name = &quot;country&quot;)
+    private String country;
+
+    @Column(name = &quot;cities&quot;)
+    private String cities;
+
+    @Column(name = &quot;quantity&quot;)
+    private int quantity;
+
+    public int getId() {
+<span class="nc" id="L52">        return id;</span>
+    }
+
+    public void setId(int id) {
+<span class="nc" id="L56">        this.id = id;</span>
+<span class="nc" id="L57">    }</span>
+
+    public String getCountry() {
+<span class="nc" id="L60">        return country;</span>
+    }
+
+    public void setCountry(String country) {
+<span class="nc" id="L64">        this.country = country;</span>
+<span class="nc" id="L65">    }</span>
+
+    public int getIdBrand() {
+<span class="nc" id="L68">        return idBrand;</span>
+    }
+
+    public void setIdBrand(int idBrand) {
+<span class="nc" id="L72">        this.idBrand = idBrand;</span>
+<span class="nc" id="L73">    }</span>
+
+    public String getName() {
+<span class="nc" id="L76">        return name;</span>
+    }
+
+    public void setName(String name) {
+<span class="nc" id="L80">        this.name = name;</span>
+<span class="nc" id="L81">    }</span>
+
+    public String getDescription() {
+<span class="nc" id="L84">        return description;</span>
+    }
+
+    public void setDescription(String description) {
+<span class="nc" id="L88">        this.description = description;</span>
+<span class="nc" id="L89">    }</span>
+
+    public int getPrice() {
+<span class="nc" id="L92">        return price;</span>
+    }
+
+    public void setPrice(int price) {
+<span class="nc" id="L96">        this.price = price;</span>
+<span class="nc" id="L97">    }</span>
+
+    public String getImg() {
+<span class="nc" id="L100">        return img;</span>
+    }
+
+    public void setImg(String img) {
+<span class="nc" id="L104">        this.img = img;</span>
+<span class="nc" id="L105">    }</span>
+
+    public String getCities() {
+<span class="nc" id="L108">        return cities;</span>
+    }
+
+    public void setCities(String listIdCities) {
+<span class="nc" id="L112">        this.cities = listIdCities;</span>
+<span class="nc" id="L113">    }</span>
+
+    public int getQuantity() {
+<span class="nc" id="L116">        return quantity;</span>
+    }
+
+    public void setQuantity(int quantity) {
+<span class="nc" id="L120">        this.quantity = quantity;</span>
+<span class="nc" id="L121">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

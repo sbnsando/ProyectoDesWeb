@@ -32,6 +32,14 @@ export class SearchComponent {
     return this.formulario.get('selected')?.invalid && this.formulario.get('selected')?.touched;
   }
 
+  getFilteredToolsByName(name: string) {
+    return this.toolsService.getFilteredToolsByName(name);
+  }
+
+  getFilteredToolsByBrand(brand: string) {
+    return this.toolsService.getFilteredToolsByBrand(brand);
+  }
+
   /**
    * Método que crea el formulario
    */
@@ -46,11 +54,11 @@ export class SearchComponent {
    * Método que realiza la búsqueda
    */
   search() {
-    //console.log(this.formulario.value);
+    console.log(this.formulario.value.selected);
     if(!this.formulario.invalid && this.formulario.value.inputText != '')
     {
       if ( this.formulario.value.selected == 'Nombre') {
-        this.toolsService.getFilteredToolsByName(this.formulario.value.inputText)
+        this.getFilteredToolsByName(this.formulario.value.inputText)
           .then((data: any) => {
             console.log(data);
             this.tools = data;
@@ -58,7 +66,7 @@ export class SearchComponent {
       }
 
       if(this.formulario.value.selected == 'Marca'){
-        this.toolsService.getFilteredToolsByBrand(this.formulario.value.inputText)
+        this.getFilteredToolsByBrand(this.formulario.value.inputText)
           .then((data: any) => {
             this.tools = data;
             //console.log(this.tools);

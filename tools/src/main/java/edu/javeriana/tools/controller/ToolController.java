@@ -4,6 +4,9 @@ import edu.javeriana.tools.entity.Tool;
 import edu.javeriana.tools.service.ToolService;
 import io.micrometer.common.util.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -120,5 +123,22 @@ public class ToolController {
     public ResponseEntity<List<Tool>> filterByBrandId(@RequestParam(value="brandId") int brandId){
         List<Tool> list = toolService.filterByBrandId(brandId);
         return new ResponseEntity<>(list, HttpStatus.OK);
+    }
+
+    @CrossOrigin(origins = "http://localhost:4200")
+    @GetMapping("/listPaged")
+    public ResponseEntity<Page<Tool>> searchPaged(
+            @RequestParam(defaultValue = "1") int page,
+            @RequestParam(defaultValue = "2") int size,
+            @RequestParam(defaultValue = "id") String order,
+            @RequestParam(defaultValue = "true") boolean ascendent
+    ){
+        Page<Tool> toolsListPaged = toolService.findAllPaged(PageRequest.of(page, size, Sort.by(order)));
+
+        if(!ascendent){
+            toolsListPaged = toolService.findAllPaged(PageRequest.of(page, size, Sort.by(order).descending()));
+        }
+
+        return new ResponseEntity<Page<Tool>>(toolsListPaged, HttpStatus.OK);
     }
 }

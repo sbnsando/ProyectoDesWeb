@@ -1,5 +1,44 @@
 <app-nav-bar></app-nav-bar>
 
+<div class="container mt-3">
+<h1>Herramientas</h1>
+    
+
+    <form autocomplete="off" [formGroup]="formulario" (ngSubmit)="search()">
+        <div class="form-group row mb-5">
+            
+            <div class="col mt-3">
+                <input type="text" 
+                class="form-control" 
+                id="inputText" 
+                aria-describedby="inputText" 
+                placeholder="Buscar por..."
+                formControlName="inputText"
+                [class.is-invalid]="inputNotValid">
+                <small *ngIf="inputNotValid" class="text-danger">
+                    Ingrese texto
+                </small>
+            </div>
+            <div class="col-auto mt-3">
+                <select class="form-select" 
+                aria-label="Select option"
+                formControlName="selected"
+                [class.is-invalid]="selectNotValid">
+                    <option value="Seleccione">Seleccione</option>
+                    <option *ngFor="let option of Options" [ngValue]="option">
+                        {{ option }}
+                    </option>
+                </select>
+            </div>
+            <div class="col-6 mt-3">
+                <button type="submit" class="btn btn-primary">Buscar</button>
+            </div>
+        </div>
+                
+    </form>
+
+</div>
+
 <app-tool-card [items]="tools" ></app-tool-card>
 
 <app-footer></app-footer>
