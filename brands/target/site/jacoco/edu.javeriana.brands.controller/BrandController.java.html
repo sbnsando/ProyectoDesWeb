@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BrandController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">brands</a> &gt; <a href="index.source.html" class="el_package">edu.javeriana.brands.controller</a> &gt; <span class="el_source">BrandController.java</span></div><h1>BrandController.java</h1><pre class="source lang-java linenums">package edu.javeriana.brands.controller;
+
+import edu.javeriana.brands.service.BrandService;
+import edu.javeriana.brands.entity.Brand;
+import io.micrometer.common.util.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping(&quot;/brand&quot;)
+<span class="fc" id="L15">public class BrandController {</span>
+
+    @Autowired
+    private BrandService brandService;
+
+    /**
+     * Método de ejemplo que devuelve un saludo.
+     *
+     * @return Un saludo.
+     */
+    @GetMapping(&quot;/&quot;)
+    public String hola(){
+<span class="nc" id="L27">        return &quot;Hola&quot;;</span>
+    }
+
+    /**
+     * Obtiene la lista de marcas.
+     *
+     * @return Una respuesta HTTP con la lista de marcas y el estado OK.
+     */
+    @CrossOrigin(origins = &quot;http://localhost:4200&quot;)
+    @GetMapping(&quot;/list&quot;)
+    public ResponseEntity&lt;List&lt;Brand&gt;&gt; list(){
+<span class="fc" id="L38">        List&lt;Brand&gt; list = brandService.list();</span>
+<span class="fc" id="L39">        return new ResponseEntity&lt;&gt;(list, HttpStatus.OK);</span>
+    }
+
+    /**
+     * Obtiene los detalles de una marca por su ID.
+     *
+     * @param id El ID de la marca.
+     * @return Una respuesta HTTP con los detalles de la marca y el estado OK si existe, o un mensaje de &quot;No encontrado&quot; y el estado NOT_FOUND si no existe.
+     */
+    @GetMapping(&quot;/detail/{id}&quot;)
+    public ResponseEntity&lt;Brand&gt; getById(@PathVariable(&quot;id&quot;) int id){
+<span class="fc bfc" id="L50" title="All 2 branches covered.">        if(!brandService.existById(id)){</span>
+<span class="fc" id="L51">            return new ResponseEntity(&quot;No encontrado&quot;, HttpStatus.NOT_FOUND);</span>
+        }
+<span class="fc" id="L53">        Brand brand = brandService.getOneById(id);</span>
+<span class="fc" id="L54">        return new ResponseEntity&lt;Brand&gt;(brand, HttpStatus.OK);</span>
+    }
+
+    /**
+     * Obtiene los detalles de una marca por su nombre.
+     *
+     * @param name El nombre de la marca.
+     * @return Una respuesta HTTP con los detalles de la marca y el estado OK si existe, o un mensaje de &quot;No encontrado&quot; y el estado NOT_FOUND si no existe.
+     */
+    @GetMapping(&quot;/detailname/{name}&quot;)
+    public ResponseEntity&lt;Brand&gt; getByName(@PathVariable(&quot;name&quot;) String name){
+<span class="fc bfc" id="L65" title="All 2 branches covered.">        if(!brandService.existByName(name)){</span>
+<span class="fc" id="L66">            return new ResponseEntity(&quot;No encontrado&quot;, HttpStatus.NOT_FOUND);</span>
+        }
+<span class="fc" id="L68">        Brand brand = brandService.getOneByName(name);</span>
+<span class="fc" id="L69">        return new ResponseEntity&lt;Brand&gt;(brand, HttpStatus.OK);</span>
+    }
+
+    /**
+     * Crea una nueva marca.
+     *
+     * @param brand La marca a crear.
+     * @return Una respuesta HTTP con un mensaje de éxito si la marca se crea correctamente, o un mensaje de error y el estado BAD_REQUEST si hay algún problema.
+     */
+    @PostMapping(&quot;/create&quot;)
+    public ResponseEntity&lt;?&gt; create(@RequestBody Brand brand){
+<span class="fc bfc" id="L80" title="All 2 branches covered.">        if(StringUtils.isBlank(brand.getName()))</span>
+<span class="fc" id="L81">            return new ResponseEntity(&quot;Se requiere el nombre&quot;,HttpStatus.BAD_REQUEST);</span>
+<span class="fc bfc" id="L82" title="All 2 branches covered.">        if(brandService.existByName(brand.getName()))</span>
+<span class="fc" id="L83">            return new ResponseEntity(&quot;La marca ya existe en la base de datos&quot;,HttpStatus.BAD_REQUEST);</span>
+<span class="fc" id="L84">        Brand brandTmp = new Brand(brand.getName());</span>
+        try{
+<span class="fc" id="L86">            brandService.save(brandTmp);</span>
+<span class="fc" id="L87">            return new ResponseEntity(&quot;Marca guardada&quot;, HttpStatus.OK);</span>
+<span class="nc" id="L88">        }catch (Exception e){</span>
+<span class="nc" id="L89">            return new ResponseEntity(&quot;Error: &quot; + e, HttpStatus.INTERNAL_SERVER_ERROR);</span>
+        }
+    }
+
+    /**
+     * Actualiza los detalles de una marca existente.
+     *
+     * @param id    El ID de la marca a actualizar.
+     * @param brand La marca con los nuevos detalles.
+     * @return Una respuesta HTTP con un mensaje de éxito si la marca se actualiza correctamente, o un mensaje de error y el estado BAD_REQUEST si hay algún problema.
+     */
+    @PutMapping(&quot;/update/{id}&quot;)
+    public ResponseEntity&lt;?&gt; update(@PathVariable(&quot;id&quot;)int id, @RequestBody Brand brand){
+<span class="fc bfc" id="L102" title="All 2 branches covered.">        if(!brandService.existById(id))</span>
+<span class="fc" id="L103">            return new ResponseEntity(&quot;No existe&quot;, HttpStatus.NOT_FOUND);</span>
+<span class="pc bpc" id="L104" title="3 of 4 branches missed.">        if(brandService.existByName(brand.getName()) &amp;&amp; brandService.getOneByName(brand.getName()).getId() != id)</span>
+<span class="nc" id="L105">            return new ResponseEntity(&quot;La marca ya existe en la base de datos&quot;, HttpStatus.BAD_REQUEST);</span>
+<span class="fc bfc" id="L106" title="All 2 branches covered.">        if(StringUtils.isBlank(brand.getName()))</span>
+<span class="fc" id="L107">            return new ResponseEntity(&quot;Se requiere el nombre&quot;,HttpStatus.BAD_REQUEST);</span>
+
+<span class="fc" id="L109">        Brand brandTmp = brandService.getOneById(id);</span>
+<span class="fc" id="L110">        brandTmp.setName(brand.getName());</span>
+        try{
+<span class="fc" id="L112">            brandService.save(brandTmp);</span>
+<span class="fc" id="L113">            return new ResponseEntity(&quot;Marca guardada&quot;, HttpStatus.OK);</span>
+<span class="nc" id="L114">        }catch (Exception e){</span>
+<span class="nc" id="L115">            return new ResponseEntity(&quot;Error: &quot; + e, HttpStatus.INTERNAL_SERVER_ERROR);</span>
+        }
+    }
+
+    /**
+     * Elimina una marca existente.
+     *
+     * @param id El ID de la marca a eliminar.
+     * @return Una respuesta HTTP con un mensaje de éxito si la marca se elimina correctamente, o un mensaje de error y el estado BAD_REQUEST si hay algún problema.
+     */
+    @DeleteMapping(&quot;/delete/{id}&quot;)
+    public ResponseEntity&lt;?&gt; delete(@PathVariable(&quot;id&quot;)int id){
+<span class="fc bfc" id="L127" title="All 2 branches covered.">        if(!brandService.existById(id))</span>
+<span class="fc" id="L128">            return new ResponseEntity(&quot;No existe&quot;, HttpStatus.NOT_FOUND);</span>
+        try{
+<span class="fc" id="L130">            brandService.delete(id);</span>
+<span class="fc" id="L131">            return new ResponseEntity(&quot;Marca eliminada&quot;, HttpStatus.OK);</span>
+<span class="nc" id="L132">        }catch (Exception e){</span>
+<span class="nc" id="L133">            return new ResponseEntity(&quot;Error: &quot; + e, HttpStatus.INTERNAL_SERVER_ERROR);</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

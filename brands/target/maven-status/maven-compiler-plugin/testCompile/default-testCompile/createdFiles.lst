@@ -1,0 +1,4 @@
+edu\javeriana\brands\controller\BrandControllerTest.class
+edu\javeriana\brands\service\BrandServiceTest.class
+edu\javeriana\brands\BrandsApplicationTests.class
+edu\javeriana\brands\entity\BrandTest.class

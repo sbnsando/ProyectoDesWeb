@@ -1,0 +1,5 @@
+edu\javeriana\brands\entity\Brand.class
+edu\javeriana\brands\service\BrandService.class
+edu\javeriana\brands\repository\BrandRepository.class
+edu\javeriana\brands\BrandsApplication.class
+edu\javeriana\brands\controller\BrandController.class

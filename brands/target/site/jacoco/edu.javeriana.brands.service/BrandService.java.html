@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BrandService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">brands</a> &gt; <a href="index.source.html" class="el_package">edu.javeriana.brands.service</a> &gt; <span class="el_source">BrandService.java</span></div><h1>BrandService.java</h1><pre class="source lang-java linenums">package edu.javeriana.brands.service;
+
+import edu.javeriana.brands.entity.Brand;
+import edu.javeriana.brands.repository.BrandRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+/**
+ * Servicio para la entidad Brand.
+ */
+@Service
+@Transactional
+<span class="fc" id="L18">public class BrandService {</span>
+
+    @Autowired
+    BrandRepository brandRepository;
+
+    /**
+     * Obtiene una lista de todas las marcas.
+     *
+     * @return La lista de marcas.
+     */
+    public List&lt;Brand&gt; list(){
+<span class="fc" id="L29">        List&lt;Brand&gt; brands = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L30">        brandRepository.findAll().forEach(brands::add);</span>
+<span class="fc" id="L31">        return brands;</span>
+    }
+
+    /**
+     * Obtiene una marca por su ID.
+     *
+     * @param id El ID de la marca.
+     * @return La marca encontrada o null si no se encuentra ninguna coincidencia.
+     */
+    public Brand getOneById(int id) {
+<span class="fc" id="L41">        Optional&lt;Brand&gt; brandOptional = brandRepository.findById(id);</span>
+<span class="fc" id="L42">        return brandOptional.orElse(null);</span>
+    }
+
+
+    /**
+     * Obtiene una marca por su nombre.
+     *
+     * @param name El nombre de la marca.
+     * @return La marca encontrada o null si no se encuentra ninguna coincidencia.
+     */
+    public Brand getOneByName(String name) {
+<span class="fc" id="L53">        Brand brand = null;</span>
+<span class="fc" id="L54">        brand = brandRepository.findByName(name);</span>
+<span class="fc" id="L55">        return brand;</span>
+    }
+
+    /**
+     * Guarda una marca.
+     *
+     * @param brand La marca a guardar.
+     */
+    public void save(Brand brand){
+<span class="fc" id="L64">        brandRepository.save(brand);</span>
+<span class="fc" id="L65">    }</span>
+
+    /**
+     * Elimina una marca por su ID.
+     *
+     * @param id El ID de la marca a eliminar.
+     */
+    public void delete(int id){
+<span class="fc" id="L73">        brandRepository.deleteById(id);</span>
+<span class="fc" id="L74">    }</span>
+
+    /**
+     * Verifica si una marca existe por su ID.
+     *
+     * @param id El ID de la marca.
+     * @return true si la marca existe, false de lo contrario.
+     */
+    public boolean existById(int id){
+<span class="fc" id="L83">        return brandRepository.existsById(id);</span>
+    }
+
+    /**
+     * Verifica si una marca existe por su nombre.
+     *
+     * @param name El nombre de la marca.
+     * @return true si la marca existe, false de lo contrario.
+     */
+    public boolean existByName(String name){
+<span class="fc bfc" id="L93" title="All 2 branches covered.">        return brandRepository.findByName(name) == null ? false : true;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
