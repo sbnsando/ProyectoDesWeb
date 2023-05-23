@@ -12,6 +12,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Servicio para la entidad Tool.
+ */
 @Service
 @Transactional
 public class ToolService {
@@ -19,6 +22,12 @@ public class ToolService {
     @Autowired
     ToolRepository toolRepository;
 
+    /**
+     * Filtra las herramientas por nombre.
+     *
+     * @param name El nombre a filtrar.
+     * @return La lista de herramientas que coinciden con el nombre.
+     */
     public List<Tool> filterByName(String name){
         String lowerCName = name.toLowerCase();
         List<Tool> tools = new ArrayList<>();
@@ -29,6 +38,12 @@ public class ToolService {
         return tools;
     }
 
+    /**
+     * Filtra las herramientas por ID de marca.
+     *
+     * @param brandId El ID de la marca a filtrar.
+     * @return La lista de herramientas que pertenecen a la marca especificada.
+     */
     public List<Tool> filterByBrandId(int brandId){
         List<Tool> tools = new ArrayList<>();
         toolRepository.findAll().forEach(tools::add);
@@ -38,44 +53,85 @@ public class ToolService {
         return tools;
     }
 
+    /**
+     * Obtiene una lista de todas las herramientas.
+     *
+     * @return La lista de herramientas.
+     */
     public List<Tool> list(){
         List<Tool> tools = new ArrayList<>();
         toolRepository.findAll().forEach(tools::add);
         return tools;
-
     }
 
+    /**
+     * Obtiene una herramienta por su ID.
+     *
+     * @param id El ID de la herramienta.
+     * @return La herramienta encontrada o null si no se encuentra ninguna coincidencia.
+     */
     public Tool getOneById(int id) {
-
         Tool tool = null;
         tool = toolRepository.findById(id).get();
-
         return tool;
     }
 
+    /**
+     * Obtiene una herramienta por su nombre.
+     *
+     * @param name El nombre de la herramienta.
+     * @return La herramienta encontrada o null si no se encuentra ninguna coincidencia.
+     */
     public Tool getOneByName(String name) {
-
         Tool tool = null;
         tool = toolRepository.findByName(name);
-
         return tool;
     }
+
+    /**
+     * Guarda una herramienta.
+     *
+     * @param tool La herramienta a guardar.
+     */
     public void save(Tool tool){
         toolRepository.save(tool);
     }
 
+    /**
+     * Elimina una herramienta por su ID.
+     *
+     * @param id El ID de la herramienta a eliminar.
+     */
     public void delete(int id){
         toolRepository.deleteById(id);
     }
 
+    /**
+     * Verifica si una herramienta existe por su ID.
+     *
+     * @param id El ID de la herramienta.
+     * @return true si la herramienta existe, false de lo contrario.
+     */
     public boolean existById(int id){
         return toolRepository.existsById(id);
     }
 
+    /**
+     * Verifica si una herramienta existe por su nombre.
+     *
+     * @param name El nombre de la herramienta.
+     * @return true si la herramienta existe, false de lo contrario.
+     */
     public boolean existByName(String name){
         return toolRepository.findByName(name) == null ? false : true;
     }
 
+    /**
+     * Obtiene una página de herramientas.
+     *
+     * @param pageable Información de paginación y ordenamiento.
+     * @return La página de herramientas.
+     */
     public Page<Tool> findAllPaged(Pageable pageable){
         return toolRepository.findAll(pageable);
     }

@@ -1,5 +1,5 @@
-edu/javeriana/tools/repository/ToolRepository.class
-edu/javeriana/tools/entity/Tool.class
-edu/javeriana/tools/ToolsApplication.class
-edu/javeriana/tools/controller/ToolController.class
-edu/javeriana/tools/service/ToolService.class
+edu\javeriana\tools\entity\Tool.class
+edu\javeriana\tools\service\ToolService.class
+edu\javeriana\tools\repository\ToolRepository.class
+edu\javeriana\tools\controller\ToolController.class
+edu\javeriana\tools\ToolsApplication.class

@@ -2,23 +2,41 @@
 
 import jakarta.persistence.*;
 
+/**
+ * Entidad que representa una herramienta.
+ */
 @Entity
 @Table(name = &quot;tools&quot;)
 public class Tool {
 
-<span class="nc" id="L9">    public Tool() {</span>
-<span class="nc" id="L10">    }</span>
+    /**
+     * Constructor por defecto de la clase Tool.
+     */
+<span class="fc" id="L15">    public Tool() {</span>
+<span class="fc" id="L16">    }</span>
 
-<span class="nc" id="L12">    public Tool(int idBrand, String name, String description, int price, String img, String country, String cities, int quantity) {</span>
-<span class="nc" id="L13">        this.idBrand = idBrand;</span>
-<span class="nc" id="L14">        this.name = name;</span>
-<span class="nc" id="L15">        this.description = description;</span>
-<span class="nc" id="L16">        this.price = price;</span>
-<span class="nc" id="L17">        this.img = img;</span>
-<span class="nc" id="L18">        this.country = country;</span>
-<span class="nc" id="L19">        this.cities = cities;</span>
-<span class="nc" id="L20">        this.quantity = quantity;</span>
-<span class="nc" id="L21">    }</span>
+    /**
+     * Constructor de la clase Tool con los datos de la herramienta.
+     *
+     * @param idBrand     El ID de la marca de la herramienta.
+     * @param name        El nombre de la herramienta.
+     * @param description La descripción de la herramienta.
+     * @param price       El precio de la herramienta.
+     * @param img         La imagen de la herramienta.
+     * @param country     El país de origen de la herramienta.
+     * @param cities      Las ciudades en las que se encuentra disponible la herramienta.
+     * @param quantity    La cantidad disponible de la herramienta.
+     */
+<span class="fc" id="L30">    public Tool(int idBrand, String name, String description, int price, String img, String country, String cities, int quantity) {</span>
+<span class="fc" id="L31">        this.idBrand = idBrand;</span>
+<span class="fc" id="L32">        this.name = name;</span>
+<span class="fc" id="L33">        this.description = description;</span>
+<span class="fc" id="L34">        this.price = price;</span>
+<span class="fc" id="L35">        this.img = img;</span>
+<span class="fc" id="L36">        this.country = country;</span>
+<span class="fc" id="L37">        this.cities = cities;</span>
+<span class="fc" id="L38">        this.quantity = quantity;</span>
+<span class="fc" id="L39">    }</span>
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -48,76 +66,166 @@ public class Tool {
     @Column(name = &quot;quantity&quot;)
     private int quantity;
 
+    /**
+     * Obtiene el ID de la herramienta.
+     *
+     * @return El ID de la herramienta.
+     */
     public int getId() {
-<span class="nc" id="L52">        return id;</span>
+<span class="fc" id="L75">        return id;</span>
     }
 
+    /**
+     * Establece el ID de la herramienta.
+     *
+     * @param id El ID de la herramienta.
+     */
     public void setId(int id) {
-<span class="nc" id="L56">        this.id = id;</span>
-<span class="nc" id="L57">    }</span>
+<span class="fc" id="L84">        this.id = id;</span>
+<span class="fc" id="L85">    }</span>
 
+    /**
+     * Obtiene el país de origen de la herramienta.
+     *
+     * @return El país de origen de la herramienta.
+     */
     public String getCountry() {
-<span class="nc" id="L60">        return country;</span>
+<span class="fc" id="L93">        return country;</span>
     }
 
+    /**
+     * Establece el país de origen de la herramienta.
+     *
+     * @param country El país de origen de la herramienta.
+     */
     public void setCountry(String country) {
-<span class="nc" id="L64">        this.country = country;</span>
-<span class="nc" id="L65">    }</span>
+<span class="fc" id="L102">        this.country = country;</span>
+<span class="fc" id="L103">    }</span>
 
+    /**
+     * Obtiene el ID de la marca de la herramienta.
+     *
+     * @return El ID de la marca de la herramienta.
+     */
     public int getIdBrand() {
-<span class="nc" id="L68">        return idBrand;</span>
+<span class="fc" id="L111">        return idBrand;</span>
     }
 
+    /**
+     * Establece el ID de la marca de la herramienta.
+     *
+     * @param idBrand El ID de la marca de la herramienta.
+     */
     public void setIdBrand(int idBrand) {
-<span class="nc" id="L72">        this.idBrand = idBrand;</span>
-<span class="nc" id="L73">    }</span>
+<span class="fc" id="L120">        this.idBrand = idBrand;</span>
+<span class="fc" id="L121">    }</span>
 
+    /**
+     * Obtiene el nombre de la herramienta.
+     *
+     * @return El nombre de la herramienta.
+     */
     public String getName() {
-<span class="nc" id="L76">        return name;</span>
+<span class="fc" id="L129">        return name;</span>
     }
 
+    /**
+     * Establece el nombre de la herramienta.
+     *
+     * @param name El nombre de la herramienta.
+     */
     public void setName(String name) {
-<span class="nc" id="L80">        this.name = name;</span>
-<span class="nc" id="L81">    }</span>
+<span class="fc" id="L138">        this.name = name;</span>
+<span class="fc" id="L139">    }</span>
 
+    /**
+     * Obtiene la descripción de la herramienta.
+     *
+     * @return La descripción de la herramienta.
+     */
     public String getDescription() {
-<span class="nc" id="L84">        return description;</span>
+<span class="fc" id="L147">        return description;</span>
     }
 
+    /**
+     * Establece la descripción de la herramienta.
+     *
+     * @param description La descripción de la herramienta.
+     */
     public void setDescription(String description) {
-<span class="nc" id="L88">        this.description = description;</span>
-<span class="nc" id="L89">    }</span>
+<span class="fc" id="L156">        this.description = description;</span>
+<span class="fc" id="L157">    }</span>
 
+    /**
+     * Obtiene el precio de la herramienta.
+     *
+     * @return El precio de la herramienta.
+     */
     public int getPrice() {
-<span class="nc" id="L92">        return price;</span>
+<span class="fc" id="L165">        return price;</span>
     }
 
+    /**
+     * Establece el precio de la herramienta.
+     *
+     * @param price El precio de la herramienta.
+     */
     public void setPrice(int price) {
-<span class="nc" id="L96">        this.price = price;</span>
-<span class="nc" id="L97">    }</span>
+<span class="fc" id="L174">        this.price = price;</span>
+<span class="fc" id="L175">    }</span>
 
+    /**
+     * Obtiene la imagen de la herramienta.
+     *
+     * @return La imagen de la herramienta.
+     */
     public String getImg() {
-<span class="nc" id="L100">        return img;</span>
+<span class="fc" id="L183">        return img;</span>
     }
 
+    /**
+     * Establece la imagen de la herramienta.
+     *
+     * @param img La imagen de la herramienta.
+     */
     public void setImg(String img) {
-<span class="nc" id="L104">        this.img = img;</span>
-<span class="nc" id="L105">    }</span>
+<span class="fc" id="L192">        this.img = img;</span>
+<span class="fc" id="L193">    }</span>
 
+    /**
+     * Obtiene las ciudades en las que se encuentra disponible la herramienta.
+     *
+     * @return Las ciudades en las que se encuentra disponible la herramienta.
+     */
     public String getCities() {
-<span class="nc" id="L108">        return cities;</span>
+<span class="fc" id="L201">        return cities;</span>
     }
 
-    public void setCities(String listIdCities) {
-<span class="nc" id="L112">        this.cities = listIdCities;</span>
-<span class="nc" id="L113">    }</span>
+    /**
+     * Establece las ciudades en las que se encuentra disponible la herramienta.
+     *
+     * @param cities Las ciudades en las que se encuentra disponible la herramienta.
+     */
+    public void setCities(String cities) {
+<span class="fc" id="L210">        this.cities = cities;</span>
+<span class="fc" id="L211">    }</span>
 
+    /**
+     * Obtiene la cantidad disponible de la herramienta.
+     *
+     * @return La cantidad disponible de la herramienta.
+     */
     public int getQuantity() {
-<span class="nc" id="L116">        return quantity;</span>
+<span class="fc" id="L219">        return quantity;</span>
     }
 
+    /**
+     * Establece la cantidad disponible de la herramienta.
+     *
+     * @param quantity La cantidad disponible de la herramienta.
+     */
     public void setQuantity(int quantity) {
-<span class="nc" id="L120">        this.quantity = quantity;</span>
-<span class="nc" id="L121">    }</span>
+<span class="fc" id="L228">        this.quantity = quantity;</span>
+<span class="fc" id="L229">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

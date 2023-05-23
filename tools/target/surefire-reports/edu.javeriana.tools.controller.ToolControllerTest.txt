@@ -1,0 +1,48 @@
+-------------------------------------------------------------------------------
+Test set: edu.javeriana.tools.controller.ToolControllerTest
+-------------------------------------------------------------------------------
+Tests run: 17, Failures: 11, Errors: 0, Skipped: 0, Time elapsed: 1.879 s <<< FAILURE! - in edu.javeriana.tools.controller.ToolControllerTest
+create_DuplicateToolName_ShouldReturnBadRequest  Time elapsed: 0.024 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Product exist in data base> but was: <El producto ya existe en la base de datos>
+	at edu.javeriana.tools.controller.ToolControllerTest.create_DuplicateToolName_ShouldReturnBadRequest(ToolControllerTest.java:146)
+
+update_NonExistingId_ShouldReturnNotFound  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <not exist> but was: <No existe>
+	at edu.javeriana.tools.controller.ToolControllerTest.update_NonExistingId_ShouldReturnNotFound(ToolControllerTest.java:179)
+
+update_DuplicateToolName_ShouldReturnBadRequest  Time elapsed: 0.009 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <tool exist in database> but was: <La herramienta ya existe en la base de datos>
+	at edu.javeriana.tools.controller.ToolControllerTest.update_DuplicateToolName_ShouldReturnBadRequest(ToolControllerTest.java:197)
+
+create_ValidTool_ShouldReturnProductSaved  Time elapsed: 0.008 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Product saved> but was: <Producto guardado>
+	at edu.javeriana.tools.controller.ToolControllerTest.create_ValidTool_ShouldReturnProductSaved(ToolControllerTest.java:103)
+
+update_ExistingIdAndValidTool_ShouldReturnProductSaved  Time elapsed: 0.008 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Product saved> but was: <Producto guardado>
+	at edu.javeriana.tools.controller.ToolControllerTest.update_ExistingIdAndValidTool_ShouldReturnProductSaved(ToolControllerTest.java:164)
+
+create_ToolWithBlankName_ShouldReturnBadRequest  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Name is required> but was: <Se requiere el nombre>
+	at edu.javeriana.tools.controller.ToolControllerTest.create_ToolWithBlankName_ShouldReturnBadRequest(ToolControllerTest.java:117)
+
+update_ToolWithBlankName_ShouldReturnBadRequest  Time elapsed: 0.008 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Name is required> but was: <Se requiere el nombre>
+	at edu.javeriana.tools.controller.ToolControllerTest.update_ToolWithBlankName_ShouldReturnBadRequest(ToolControllerTest.java:214)
+
+delete_ExistingId_ShouldReturnProductDeleted  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Product deleted> but was: <Producto eliminado>
+	at edu.javeriana.tools.controller.ToolControllerTest.delete_ExistingId_ShouldReturnProductDeleted(ToolControllerTest.java:246)
+
+update_ToolWithNegativePrice_ShouldReturnBadRequest  Time elapsed: 0.009 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Price is required> but was: <Se requiere el precio>
+	at edu.javeriana.tools.controller.ToolControllerTest.update_ToolWithNegativePrice_ShouldReturnBadRequest(ToolControllerTest.java:231)
+
+delete_NonExistingId_ShouldReturnNotFound  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <not exist> but was: <No existe>
+	at edu.javeriana.tools.controller.ToolControllerTest.delete_NonExistingId_ShouldReturnNotFound(ToolControllerTest.java:261)
+
+create_ToolWithNegativePrice_ShouldReturnBadRequest  Time elapsed: 0.008 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Price must be greater than zero> but was: <El precio debe ser mayor que cero>
+	at edu.javeriana.tools.controller.ToolControllerTest.create_ToolWithNegativePrice_ShouldReturnBadRequest(ToolControllerTest.java:131)
+

@@ -3,6 +3,8 @@
 import edu.javeriana.tools.entity.Tool;
 import edu.javeriana.tools.repository.ToolRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -10,68 +12,128 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Servicio para la entidad Tool.
+ */
 @Service
 @Transactional
-<span class="nc" id="L15">public class ToolService {</span>
+<span class="fc" id="L20">public class ToolService {</span>
 
     @Autowired
     ToolRepository toolRepository;
 
+    /**
+     * Filtra las herramientas por nombre.
+     *
+     * @param name El nombre a filtrar.
+     * @return La lista de herramientas que coinciden con el nombre.
+     */
     public List&lt;Tool&gt; filterByName(String name){
-<span class="nc" id="L21">        String lowerCName = name.toLowerCase();</span>
-<span class="nc" id="L22">        List&lt;Tool&gt; tools = new ArrayList&lt;&gt;();</span>
-<span class="nc" id="L23">        toolRepository.findAll().forEach(tools::add);</span>
-<span class="nc" id="L24">        tools = tools.stream()</span>
-<span class="nc" id="L25">                .filter(t -&gt; t.getName().toLowerCase().contains(lowerCName))</span>
-<span class="nc" id="L26">                .collect(Collectors.toList());</span>
-<span class="nc" id="L27">        return tools;</span>
+<span class="nc" id="L32">        String lowerCName = name.toLowerCase();</span>
+<span class="nc" id="L33">        List&lt;Tool&gt; tools = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L34">        toolRepository.findAll().forEach(tools::add);</span>
+<span class="nc" id="L35">        tools = tools.stream()</span>
+<span class="nc" id="L36">                .filter(t -&gt; t.getName().toLowerCase().contains(lowerCName))</span>
+<span class="nc" id="L37">                .collect(Collectors.toList());</span>
+<span class="nc" id="L38">        return tools;</span>
     }
 
+    /**
+     * Filtra las herramientas por ID de marca.
+     *
+     * @param brandId El ID de la marca a filtrar.
+     * @return La lista de herramientas que pertenecen a la marca especificada.
+     */
     public List&lt;Tool&gt; filterByBrandId(int brandId){
-<span class="nc" id="L31">        List&lt;Tool&gt; tools = new ArrayList&lt;&gt;();</span>
-<span class="nc" id="L32">        toolRepository.findAll().forEach(tools::add);</span>
-<span class="nc" id="L33">        tools = tools.stream()</span>
-<span class="nc bnc" id="L34" title="All 2 branches missed.">                .filter(t -&gt; t.getIdBrand() == brandId)</span>
-<span class="nc" id="L35">                .collect(Collectors.toList());</span>
-<span class="nc" id="L36">        return tools;</span>
+<span class="fc" id="L48">        List&lt;Tool&gt; tools = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L49">        toolRepository.findAll().forEach(tools::add);</span>
+<span class="fc" id="L50">        tools = tools.stream()</span>
+<span class="fc bfc" id="L51" title="All 2 branches covered.">                .filter(t -&gt; t.getIdBrand() == brandId)</span>
+<span class="fc" id="L52">                .collect(Collectors.toList());</span>
+<span class="fc" id="L53">        return tools;</span>
     }
 
+    /**
+     * Obtiene una lista de todas las herramientas.
+     *
+     * @return La lista de herramientas.
+     */
     public List&lt;Tool&gt; list(){
-<span class="nc" id="L40">        List&lt;Tool&gt; tools = new ArrayList&lt;&gt;();</span>
-<span class="nc" id="L41">        toolRepository.findAll().forEach(tools::add);</span>
-<span class="nc" id="L42">        return tools;</span>
-
+<span class="fc" id="L62">        List&lt;Tool&gt; tools = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L63">        toolRepository.findAll().forEach(tools::add);</span>
+<span class="fc" id="L64">        return tools;</span>
     }
 
+    /**
+     * Obtiene una herramienta por su ID.
+     *
+     * @param id El ID de la herramienta.
+     * @return La herramienta encontrada o null si no se encuentra ninguna coincidencia.
+     */
     public Tool getOneById(int id) {
-
-<span class="nc" id="L48">        Tool tool = null;</span>
-<span class="nc" id="L49">        tool = toolRepository.findById(id).get();</span>
-
-<span class="nc" id="L51">        return tool;</span>
+<span class="fc" id="L74">        Tool tool = null;</span>
+<span class="fc" id="L75">        tool = toolRepository.findById(id).get();</span>
+<span class="fc" id="L76">        return tool;</span>
     }
 
+    /**
+     * Obtiene una herramienta por su nombre.
+     *
+     * @param name El nombre de la herramienta.
+     * @return La herramienta encontrada o null si no se encuentra ninguna coincidencia.
+     */
     public Tool getOneByName(String name) {
-
-<span class="nc" id="L56">        Tool tool = null;</span>
-<span class="nc" id="L57">        tool = toolRepository.findByName(name);</span>
-
-<span class="nc" id="L59">        return tool;</span>
+<span class="fc" id="L86">        Tool tool = null;</span>
+<span class="fc" id="L87">        tool = toolRepository.findByName(name);</span>
+<span class="fc" id="L88">        return tool;</span>
     }
+
+    /**
+     * Guarda una herramienta.
+     *
+     * @param tool La herramienta a guardar.
+     */
     public void save(Tool tool){
-<span class="nc" id="L62">        toolRepository.save(tool);</span>
-<span class="nc" id="L63">    }</span>
+<span class="fc" id="L97">        toolRepository.save(tool);</span>
+<span class="fc" id="L98">    }</span>
 
+    /**
+     * Elimina una herramienta por su ID.
+     *
+     * @param id El ID de la herramienta a eliminar.
+     */
     public void delete(int id){
-<span class="nc" id="L66">        toolRepository.deleteById(id);</span>
-<span class="nc" id="L67">    }</span>
+<span class="fc" id="L106">        toolRepository.deleteById(id);</span>
+<span class="fc" id="L107">    }</span>
 
+    /**
+     * Verifica si una herramienta existe por su ID.
+     *
+     * @param id El ID de la herramienta.
+     * @return true si la herramienta existe, false de lo contrario.
+     */
     public boolean existById(int id){
-<span class="nc" id="L70">        return toolRepository.existsById(id);</span>
+<span class="fc" id="L116">        return toolRepository.existsById(id);</span>
     }
 
+    /**
+     * Verifica si una herramienta existe por su nombre.
+     *
+     * @param name El nombre de la herramienta.
+     * @return true si la herramienta existe, false de lo contrario.
+     */
     public boolean existByName(String name){
-<span class="nc bnc" id="L74" title="All 2 branches missed.">        return toolRepository.findByName(name) == null ? false : true;</span>
+<span class="fc bfc" id="L126" title="All 2 branches covered.">        return toolRepository.findByName(name) == null ? false : true;</span>
+    }
+
+    /**
+     * Obtiene una página de herramientas.
+     *
+     * @param pageable Información de paginación y ordenamiento.
+     * @return La página de herramientas.
+     */
+    public Page&lt;Tool&gt; findAllPaged(Pageable pageable){
+<span class="fc" id="L136">        return toolRepository.findAll(pageable);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

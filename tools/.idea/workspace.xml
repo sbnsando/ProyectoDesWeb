@@ -4,23 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04293594-333b-429c-98cb-225d421575e9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../front/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../front/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../front/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/app.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/app/components/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/components/home/home.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/app/components/home/home.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/components/home/home.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/app/components/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/components/home/home.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/app/components/search/search.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/components/search/search.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/app/components/search/search.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/components/search/search.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/app/components/shared/nav-bar/nav-bar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/components/shared/nav-bar/nav-bar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/app/services/tools.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/services/tools.service.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../users/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../users/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="04293594-333b-429c-98cb-225d421575e9" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageOptionsProvider">
+    <option name="myAddOrReplace" value="0" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -53,6 +44,7 @@
     "WebServerToolWindowFactoryState": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_opened_file_path": "D:/Universidad/2023-1/Desarrollo Web/Proyecto/ProyectoDesWeb/brands",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -67,10 +59,13 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="edu.javeriana.tools.controller" />
+      <recent name="edu.javeriana.tools.entity" />
+      <recent name="edu.javeriana.tools.service" />
       <recent name="edu.javeriana.tools.controllerTests" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ToolControllerTest.testListTools">
+  <component name="RunManager" selected="Application.ToolsApplication">
     <configuration name="ToolsApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.javeriana.tools.ToolsApplication" />
       <module name="tools" />
@@ -84,57 +79,73 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ToolControllerTest.testGetToolById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ToolControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="tools" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.javeriana.tools.controllerTests.*" />
+          <option name="PATTERN" value="edu.javeriana.tools.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.javeriana.tools.controllerTests" />
-      <option name="MAIN_CLASS_NAME" value="edu.javeriana.tools.controllerTests.ToolControllerTest" />
-      <option name="METHOD_NAME" value="testGetToolById" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="edu.javeriana.tools.controller" />
+      <option name="MAIN_CLASS_NAME" value="edu.javeriana.tools.controller.ToolControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ToolControllerTest.testListTools" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ToolServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="tools" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.javeriana.tools.controllerTests.*" />
+          <option name="PATTERN" value="edu.javeriana.tools.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.javeriana.tools.controllerTests" />
-      <option name="MAIN_CLASS_NAME" value="edu.javeriana.tools.controllerTests.ToolControllerTest" />
-      <option name="METHOD_NAME" value="testListTools" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="edu.javeriana.tools.service" />
+      <option name="MAIN_CLASS_NAME" value="edu.javeriana.tools.service.ToolServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ToolsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="ToolTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="tools" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="edu.javeriana.tools.ToolsApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.javeriana.tools.entity.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.javeriana.tools.entity" />
+      <option name="MAIN_CLASS_NAME" value="edu.javeriana.tools.entity.ToolTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ToolsApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tools" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="edu.javeriana.tools.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="edu.javeriana.tools" />
+      <option name="MAIN_CLASS_NAME" value="edu.javeriana.tools.ToolsApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ToolControllerTest.testListTools" />
-        <item itemvalue="JUnit.ToolControllerTest.testGetToolById" />
-        <item itemvalue="Spring Boot.ToolsApplication" />
         <item itemvalue="Application.ToolsApplication" />
+        <item itemvalue="JUnit.ToolsApplicationTests" />
+        <item itemvalue="JUnit.ToolServiceTest" />
+        <item itemvalue="JUnit.ToolControllerTest" />
+        <item itemvalue="JUnit.ToolTest" />
       </list>
     </recent_temporary>
   </component>
@@ -157,5 +168,33 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/tools$ToolTest.ic" NAME="ToolTest Coverage Results" MODIFIED="1684803788952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.javeriana.tools.entity.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/tools$ToolServiceTest.ic" NAME="ToolServiceTest Coverage Results" MODIFIED="1684805135809" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.javeriana.tools.service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/tools$ToolsApplicationTests.ic" NAME="ToolsApplicationTests Coverage Results" MODIFIED="1684805267049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.javeriana.tools.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/tools$ToolsApplication.ic" NAME="ToolsApplication Coverage Results" MODIFIED="1684805280366" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.javeriana.tools.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/tools$ToolControllerTest.ic" NAME="ToolControllerTest Coverage Results" MODIFIED="1684804740340" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.javeriana.tools.controller.*</FILTER>
+    </SUITE>
   </component>
 </project>

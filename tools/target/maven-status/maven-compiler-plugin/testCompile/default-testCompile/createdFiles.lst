@@ -1,1 +1,4 @@
-edu/javeriana/tools/ToolsApplicationTests.class
+edu\javeriana\tools\service\ToolServiceTest.class
+edu\javeriana\tools\ToolsApplicationTests.class
+edu\javeriana\tools\controller\ToolControllerTest.class
+edu\javeriana\tools\entity\ToolTest.class

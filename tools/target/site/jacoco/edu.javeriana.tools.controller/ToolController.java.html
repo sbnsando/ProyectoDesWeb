@@ -4,122 +4,203 @@ import edu.javeriana.tools.entity.Tool;
 import edu.javeriana.tools.service.ToolService;
 import io.micrometer.common.util.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * Controlador para la entidad Tool.
+ */
 @RestController
 @RequestMapping(&quot;/tool&quot;)
-<span class="nc" id="L15">public class ToolController {</span>
+<span class="fc" id="L21">public class ToolController {</span>
 
     @Autowired
     private ToolService toolService;
 
+    /**
+     * Método de ejemplo para verificar que el controlador está funcionando.
+     *
+     * @return El mensaje &quot;Hola&quot;.
+     */
     @GetMapping(&quot;/&quot;)
     public String hola(){
-<span class="nc" id="L22">        return &quot;Hola&quot;;</span>
+<span class="nc" id="L33">        return &quot;Hola&quot;;</span>
     }
 
+    /**
+     * Obtiene una lista de todas las herramientas.
+     *
+     * @return La lista de herramientas.
+     */
     @CrossOrigin(origins = &quot;http://localhost:4200&quot;)
     @GetMapping(&quot;/list&quot;)
     public ResponseEntity&lt;List&lt;Tool&gt;&gt; list(){
-<span class="nc" id="L28">        List&lt;Tool&gt; list = toolService.list();</span>
-<span class="nc" id="L29">        return new ResponseEntity&lt;&gt;(list, HttpStatus.OK);</span>
+<span class="fc" id="L44">        List&lt;Tool&gt; list = toolService.list();</span>
+<span class="fc" id="L45">        return new ResponseEntity&lt;&gt;(list, HttpStatus.OK);</span>
     }
 
+    /**
+     * Obtiene una herramienta por su ID.
+     *
+     * @param id El ID de la herramienta.
+     * @return La herramienta encontrada o un mensaje de error si no existe.
+     */
     @GetMapping(&quot;/detail/{id}&quot;)
     public ResponseEntity&lt;Tool&gt; getById(@PathVariable(&quot;id&quot;) int id){
-<span class="nc bnc" id="L34" title="All 2 branches missed.">        if(!toolService.existById(id)){</span>
-<span class="nc" id="L35">            return new ResponseEntity(&quot;Not exist&quot;, HttpStatus.NOT_FOUND);</span>
+<span class="pc bpc" id="L56" title="1 of 2 branches missed.">        if(!toolService.existById(id)){</span>
+<span class="nc" id="L57">            return new ResponseEntity(&quot;No existe&quot;, HttpStatus.NOT_FOUND);</span>
         }
-<span class="nc" id="L37">        Tool tool = toolService.getOneById(id);</span>
-<span class="nc" id="L38">        return new ResponseEntity&lt;Tool&gt;(tool, HttpStatus.OK);</span>
+<span class="fc" id="L59">        Tool tool = toolService.getOneById(id);</span>
+<span class="fc" id="L60">        return new ResponseEntity&lt;Tool&gt;(tool, HttpStatus.OK);</span>
     }
 
-
+    /**
+     * Obtiene una herramienta por su nombre.
+     *
+     * @param name El nombre de la herramienta.
+     * @return La herramienta encontrada o un mensaje de error si no existe.
+     */
     @GetMapping(&quot;/detailname/{name}&quot;)
     public ResponseEntity&lt;Tool&gt; getByName(@PathVariable(&quot;name&quot;) String name){
-
-<span class="nc bnc" id="L45" title="All 2 branches missed.">        if(!toolService.existByName(name)){</span>
-<span class="nc" id="L46">            return new ResponseEntity(&quot;Not exist&quot;, HttpStatus.NOT_FOUND);</span>
+<span class="fc bfc" id="L71" title="All 2 branches covered.">        if(!toolService.existByName(name)){</span>
+<span class="fc" id="L72">            return new ResponseEntity(&quot;No existe&quot;, HttpStatus.NOT_FOUND);</span>
         }
-<span class="nc" id="L48">        Tool tool = toolService.getOneByName(name);</span>
-<span class="nc" id="L49">        return new ResponseEntity&lt;Tool&gt;(tool, HttpStatus.OK);</span>
+<span class="fc" id="L74">        Tool tool = toolService.getOneByName(name);</span>
+<span class="fc" id="L75">        return new ResponseEntity&lt;Tool&gt;(tool, HttpStatus.OK);</span>
     }
 
-
+    /**
+     * Crea una nueva herramienta.
+     *
+     * @param tool La herramienta a crear.
+     * @return Un mensaje de éxito si se crea correctamente o un mensaje de error si no se puede crear.
+     */
     @PostMapping(&quot;/create&quot;)
     public ResponseEntity&lt;?&gt; create(@RequestBody Tool tool){
-<span class="nc bnc" id="L55" title="All 2 branches missed.">        if(StringUtils.isBlank(tool.getName()))</span>
-<span class="nc" id="L56">            return new ResponseEntity(&quot;Name is required&quot;,HttpStatus.BAD_REQUEST);</span>
-<span class="nc bnc" id="L57" title="All 2 branches missed.">        if(tool.getPrice()&lt;0)</span>
-<span class="nc" id="L58">            return new ResponseEntity(&quot;Price must be greater than zero&quot;,HttpStatus.BAD_REQUEST);</span>
-<span class="nc bnc" id="L59" title="All 2 branches missed.">        if(toolService.existByName(tool.getName()))</span>
-<span class="nc" id="L60">            return new ResponseEntity(&quot;Product exist in data base&quot;,HttpStatus.BAD_REQUEST);</span>
-<span class="nc" id="L61">        Tool toolTmp = new Tool(tool.getIdBrand(), tool.getName(), tool.getDescription(), tool.getPrice(),tool.getImg(), tool.getCountry(), tool.getCities(), tool.getQuantity());</span>
+<span class="fc bfc" id="L86" title="All 2 branches covered.">        if(StringUtils.isBlank(tool.getName()))</span>
+<span class="fc" id="L87">            return new ResponseEntity(&quot;Se requiere el nombre&quot;, HttpStatus.BAD_REQUEST);</span>
+<span class="fc bfc" id="L88" title="All 2 branches covered.">        if(tool.getPrice()&lt;0)</span>
+<span class="fc" id="L89">            return new ResponseEntity(&quot;El precio debe ser mayor que cero&quot;, HttpStatus.BAD_REQUEST);</span>
+<span class="fc bfc" id="L90" title="All 2 branches covered.">        if(toolService.existByName(tool.getName()))</span>
+<span class="fc" id="L91">            return new ResponseEntity(&quot;El producto ya existe en la base de datos&quot;, HttpStatus.BAD_REQUEST);</span>
+<span class="fc" id="L92">        Tool toolTmp = new Tool(tool.getIdBrand(), tool.getName(), tool.getDescription(), tool.getPrice(), tool.getImg(), tool.getCountry(), tool.getCities(), tool.getQuantity());</span>
         try{
-<span class="nc" id="L63">            toolService.save(toolTmp);</span>
-<span class="nc" id="L64">            return new ResponseEntity(&quot;Product saved&quot;, HttpStatus.OK);</span>
-<span class="nc" id="L65">        }catch (Exception e){</span>
-<span class="nc" id="L66">            return new ResponseEntity(&quot;Error&quot;+e, HttpStatus.INTERNAL_SERVER_ERROR);</span>
+<span class="fc" id="L94">            toolService.save(toolTmp);</span>
+<span class="fc" id="L95">            return new ResponseEntity(&quot;Producto guardado&quot;, HttpStatus.OK);</span>
+<span class="nc" id="L96">        }catch (Exception e){</span>
+<span class="nc" id="L97">            return new ResponseEntity(&quot;Error: &quot; + e, HttpStatus.INTERNAL_SERVER_ERROR);</span>
         }
     }
-    
+
+    /**
+     * Actualiza una herramienta existente.
+     *
+     * @param id   El ID de la herramienta a actualizar.
+     * @param tool La herramienta con los nuevos datos.
+     * @return Un mensaje de éxito si se actualiza correctamente o un mensaje de error si no se puede actualizar.
+     */
     @PutMapping(&quot;/update/{id}&quot;)
-    public ResponseEntity&lt;?&gt; update(@PathVariable(&quot;id&quot;)int id, @RequestBody Tool tool){
-<span class="nc bnc" id="L72" title="All 2 branches missed.">        if(!toolService.existById(id))</span>
-<span class="nc" id="L73">            return new ResponseEntity(&quot;not exist&quot;, HttpStatus.NOT_FOUND);</span>
-<span class="nc bnc" id="L74" title="All 4 branches missed.">        if(toolService.existByName(tool.getName()) &amp;&amp; toolService.getOneByName(tool.getName()).getId() != id)</span>
-<span class="nc" id="L75">            return new ResponseEntity(&quot;tool exist in database&quot;, HttpStatus.BAD_REQUEST);</span>
-<span class="nc bnc" id="L76" title="All 2 branches missed.">        if(StringUtils.isBlank(tool.getName()))</span>
-<span class="nc" id="L77">            return new ResponseEntity(&quot;Name is required&quot;,HttpStatus.BAD_REQUEST);</span>
-<span class="nc bnc" id="L78" title="All 4 branches missed.">        if((Integer) tool.getPrice() == null || tool.getPrice()&lt;0)</span>
-<span class="nc" id="L79">            return new ResponseEntity(&quot;Price is required&quot;,HttpStatus.BAD_REQUEST);</span>
+    public ResponseEntity&lt;?&gt; update(@PathVariable(&quot;id&quot;) int id, @RequestBody Tool tool){
+<span class="fc bfc" id="L110" title="All 2 branches covered.">        if(!toolService.existById(id))</span>
+<span class="fc" id="L111">            return new ResponseEntity(&quot;No existe&quot;, HttpStatus.NOT_FOUND);</span>
+<span class="pc bpc" id="L112" title="1 of 4 branches missed.">        if(toolService.existByName(tool.getName()) &amp;&amp; toolService.getOneByName(tool.getName()).getId() != id)</span>
+<span class="fc" id="L113">            return new ResponseEntity(&quot;La herramienta ya existe en la base de datos&quot;, HttpStatus.BAD_REQUEST);</span>
+<span class="fc bfc" id="L114" title="All 2 branches covered.">        if(StringUtils.isBlank(tool.getName()))</span>
+<span class="fc" id="L115">            return new ResponseEntity(&quot;Se requiere el nombre&quot;, HttpStatus.BAD_REQUEST);</span>
+<span class="pc bpc" id="L116" title="1 of 4 branches missed.">        if((Integer) tool.getPrice() == null || tool.getPrice()&lt;0)</span>
+<span class="fc" id="L117">            return new ResponseEntity(&quot;Se requiere el precio&quot;, HttpStatus.BAD_REQUEST);</span>
 
-<span class="nc" id="L81">        Tool toolTmp = toolService.getOneById(id);</span>
-<span class="nc" id="L82">        toolTmp.setIdBrand(tool.getIdBrand());</span>
-<span class="nc" id="L83">        toolTmp.setName(tool.getName());</span>
-<span class="nc" id="L84">        toolTmp.setPrice(tool.getPrice());</span>
-<span class="nc" id="L85">        toolTmp.setDescription(tool.getDescription());</span>
-<span class="nc" id="L86">        toolTmp.setCountry(tool.getCountry());</span>
-<span class="nc" id="L87">        toolTmp.setCities(tool.getCities());</span>
-<span class="nc" id="L88">        toolTmp.setQuantity(tool.getQuantity());</span>
-<span class="nc" id="L89">        toolTmp.setImg(tool.getImg());</span>
+<span class="fc" id="L119">        Tool toolTmp = toolService.getOneById(id);</span>
+<span class="fc" id="L120">        toolTmp.setIdBrand(tool.getIdBrand());</span>
+<span class="fc" id="L121">        toolTmp.setName(tool.getName());</span>
+<span class="fc" id="L122">        toolTmp.setPrice(tool.getPrice());</span>
+<span class="fc" id="L123">        toolTmp.setDescription(tool.getDescription());</span>
+<span class="fc" id="L124">        toolTmp.setCountry(tool.getCountry());</span>
+<span class="fc" id="L125">        toolTmp.setCities(tool.getCities());</span>
+<span class="fc" id="L126">        toolTmp.setQuantity(tool.getQuantity());</span>
+<span class="fc" id="L127">        toolTmp.setImg(tool.getImg());</span>
         try{
-<span class="nc" id="L91">            toolService.save(toolTmp);</span>
-<span class="nc" id="L92">            return new ResponseEntity(&quot;Product saved&quot;, HttpStatus.OK);</span>
-<span class="nc" id="L93">        }catch (Exception e){</span>
-<span class="nc" id="L94">            return new ResponseEntity(&quot;Error&quot;+e, HttpStatus.INTERNAL_SERVER_ERROR);</span>
+<span class="fc" id="L129">            toolService.save(toolTmp);</span>
+<span class="fc" id="L130">            return new ResponseEntity(&quot;Producto guardado&quot;, HttpStatus.OK);</span>
+<span class="nc" id="L131">        }catch (Exception e){</span>
+<span class="nc" id="L132">            return new ResponseEntity(&quot;Error: &quot; + e, HttpStatus.INTERNAL_SERVER_ERROR);</span>
         }
     }
 
-
+    /**
+     * Elimina una herramienta por su ID.
+     *
+     * @param id El ID de la herramienta a eliminar.
+     * @return Un mensaje de éxito si se elimina correctamente o un mensaje de error si no se puede eliminar.
+     */
     @DeleteMapping(&quot;/delete/{id}&quot;)
-    public ResponseEntity&lt;?&gt; delete(@PathVariable(&quot;id&quot;)int id){
-<span class="nc bnc" id="L101" title="All 2 branches missed.">        if(!toolService.existById(id))</span>
-<span class="nc" id="L102">            return new ResponseEntity(&quot;not exist&quot;, HttpStatus.NOT_FOUND);</span>
+    public ResponseEntity&lt;?&gt; delete(@PathVariable(&quot;id&quot;) int id){
+<span class="fc bfc" id="L144" title="All 2 branches covered.">        if(!toolService.existById(id))</span>
+<span class="fc" id="L145">            return new ResponseEntity(&quot;No existe&quot;, HttpStatus.NOT_FOUND);</span>
         try{
-<span class="nc" id="L104">            toolService.delete(id);</span>
-<span class="nc" id="L105">            return new ResponseEntity(&quot;Product deleted&quot;, HttpStatus.OK);</span>
-<span class="nc" id="L106">        }catch (Exception e){</span>
-<span class="nc" id="L107">            return new ResponseEntity(&quot;Error&quot;+e, HttpStatus.INTERNAL_SERVER_ERROR);</span>
+<span class="fc" id="L147">            toolService.delete(id);</span>
+<span class="fc" id="L148">            return new ResponseEntity(&quot;Producto eliminado&quot;, HttpStatus.OK);</span>
+<span class="nc" id="L149">        }catch (Exception e){</span>
+<span class="nc" id="L150">            return new ResponseEntity(&quot;Error: &quot; + e, HttpStatus.INTERNAL_SERVER_ERROR);</span>
         }
     }
 
+    /**
+     * Filtra las herramientas por nombre.
+     *
+     * @param name El nombre para filtrar las herramientas.
+     * @return La lista de herramientas filtradas.
+     */
     @CrossOrigin
     @GetMapping(&quot;/filter&quot;)
     public ResponseEntity&lt;List&lt;Tool&gt;&gt; filterByName(@RequestParam(value=&quot;name&quot;) String name){
-<span class="nc" id="L114">        List&lt;Tool&gt; list = toolService.filterByName(name);</span>
-<span class="nc" id="L115">        return new ResponseEntity&lt;&gt;(list, HttpStatus.OK);</span>
+<span class="fc" id="L163">        List&lt;Tool&gt; list = toolService.filterByName(name);</span>
+<span class="fc" id="L164">        return new ResponseEntity&lt;&gt;(list, HttpStatus.OK);</span>
     }
 
+    /**
+     * Filtra las herramientas por ID de marca.
+     *
+     * @param brandId El ID de la marca para filtrar las herramientas.
+     * @return La lista de herramientas filtradas.
+     */
     @CrossOrigin
     @GetMapping(&quot;/filterByBrand&quot;)
     public ResponseEntity&lt;List&lt;Tool&gt;&gt; filterByBrandId(@RequestParam(value=&quot;brandId&quot;) int brandId){
-<span class="nc" id="L121">        List&lt;Tool&gt; list = toolService.filterByBrandId(brandId);</span>
-<span class="nc" id="L122">        return new ResponseEntity&lt;&gt;(list, HttpStatus.OK);</span>
+<span class="fc" id="L176">        List&lt;Tool&gt; list = toolService.filterByBrandId(brandId);</span>
+<span class="fc" id="L177">        return new ResponseEntity&lt;&gt;(list, HttpStatus.OK);</span>
+    }
+
+    /**
+     * Obtiene una lista de herramientas paginada.
+     *
+     * @param page      El número de página.
+     * @param size      El tamaño de la página.
+     * @param order     El orden de clasificación (por defecto es &quot;id&quot;).
+     * @param ascendent Indica si la clasificación es ascendente (por defecto es true).
+     * @return La lista de herramientas paginada.
+     */
+    @CrossOrigin(origins = &quot;http://localhost:4200&quot;)
+    @GetMapping(&quot;/listPaged&quot;)
+    public ResponseEntity&lt;Page&lt;Tool&gt;&gt; searchPaged(
+            @RequestParam(defaultValue = &quot;1&quot;) int page,
+            @RequestParam(defaultValue = &quot;2&quot;) int size,
+            @RequestParam(defaultValue = &quot;id&quot;) String order,
+            @RequestParam(defaultValue = &quot;true&quot;) boolean ascendent
+    ){
+<span class="nc" id="L197">        Page&lt;Tool&gt; toolsListPaged = toolService.findAllPaged(PageRequest.of(page, size, Sort.by(order)));</span>
+
+<span class="nc bnc" id="L199" title="All 2 branches missed.">        if(!ascendent){</span>
+<span class="nc" id="L200">            toolsListPaged = toolService.findAllPaged(PageRequest.of(page, size, Sort.by(order).descending()));</span>
+        }
+
+<span class="nc" id="L203">        return new ResponseEntity&lt;Page&lt;Tool&gt;&gt;(toolsListPaged, HttpStatus.OK);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
