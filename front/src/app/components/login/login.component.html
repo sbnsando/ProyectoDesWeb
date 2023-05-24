@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="/src/app/login/login.component.css">
+    <link rel="stylesheet" href="login.component.css">
   </head>
   <body>
     <section class="vh-100">
@@ -29,6 +29,13 @@
                 
                 <a href="#!" class="text-body">Forgot password?</a>
               </div>
+
+              <br>
+
+              <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+                {{ errorMessage }}
+              </div>
+
               <!-- Remind my password -->
               <div class="text-center text-lg-start mt-4 pt-2">
                 <button type="submit" class="btn btn-primary btn-lg"

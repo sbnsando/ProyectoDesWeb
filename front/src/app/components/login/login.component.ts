@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LoginService } from './login.service';
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-login',
@@ -11,9 +11,11 @@ import { LoginService } from './login.service';
 export class LoginComponent implements OnInit{
 
   ngOnInit(): void {  }
+  errorMessage: string | null = null;
+
 
   constructor(private formBuilder: FormBuilder,
-    private loginService : LoginService,
+    private usersService : UsersService,
     public router: Router){ }
 
   checkoutForm = this.formBuilder.group({
@@ -26,15 +28,16 @@ export class LoginComponent implements OnInit{
     let passParam: string;
     userParam = '' + this.checkoutForm.value.user;
     passParam = '' + this.checkoutForm.value.password;
-    console.log('form value: ', this.checkoutForm.value);
-    console.log('email: ',this.checkoutForm.value.user);
-    console.log('Pass: ', this.checkoutForm.value.password);
-    this.loginService.login(userParam,passParam).subscribe(
-                          data => {
-                            console.log(data);
-                            this.loginService.setToken(data.token);
-                          }
-    );
+    this.usersService.login(userParam, passParam)
+    .then((response: any) => {
+      this.errorMessage = "";
+      this.router.navigateByUrl("/home");
+      console.log(response);
+  }).catch(error => {
+    this.errorMessage = error; // Almacena el mensaje de error en la propiedad errorMessage
+    console.error(error); // Puedes mostrar un mensaje de error en la consola
+  });
+    
   }
 
 }

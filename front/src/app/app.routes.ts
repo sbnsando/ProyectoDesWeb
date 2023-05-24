@@ -19,6 +19,7 @@ export const ROUTES: Routes = [
     { path: 'users', component: UsersComponent },
     // { path: 'search', component: SearchComponent },
     { path: 'login', component: LoginComponent },
+    { path: 'users', component: UsersComponent },
     { path: '', pathMatch: 'full', redirectTo: 'home' },
     { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];

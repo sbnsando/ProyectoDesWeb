@@ -1,6 +1,7 @@
 package edu.javeriana.users.control;
 
 import edu.javeriana.users.entity.User;
+import edu.javeriana.users.entity.UserLoginDTO;
 import edu.javeriana.users.service.UserService;
 import io.micrometer.common.util.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -78,21 +79,25 @@ public class UserController {
     /**
      * Realiza el inicio de sesión de un usuario.
      *
-     * @param email    Email del usuario.
-     * @param password Contraseña del usuario.
+     * @param userLogin Usuario a logear.
      * @return Respuesta HTTP indicando el resultado del inicio de sesión.
      */
     @CrossOrigin(origins = "http://localhost:4200")
-    @PostMapping("/login/{email}&{password}")
-    public ResponseEntity<?> login(@PathVariable("email") String email, @PathVariable("password") String password){
-        if(!userService.existsByEmail(email)){
-            return new ResponseEntity("No existe un correo asociado", HttpStatus.BAD_REQUEST);
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestBody UserLoginDTO userLogin) {
+        String email = userLogin.getEmail();
+        String password = userLogin.getPassword();
+
+        if (!userService.existsByEmail(email)) {
+            return ResponseEntity.badRequest().body("{\"error\": \"No existe un correo asociado\"}");
         }
+
         User user = userService.getOneByEmail(email);
-        if(!user.getPassword().equals(password)){
-            return new ResponseEntity("Contraseña incorrecta", HttpStatus.UNAUTHORIZED);
+        if (!user.getPassword().equals(password)) {
+            return ResponseEntity.badRequest().body("{\"error\": \"Contraseña incorrecta\"}");
         }
-        return new ResponseEntity("Acceso concedido", HttpStatus.OK);
+
+        return ResponseEntity.ok("{\"message\": \"Acceso concedido\"}");
     }
 
     /**

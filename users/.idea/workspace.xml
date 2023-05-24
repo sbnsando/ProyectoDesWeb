@@ -4,23 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80a83589-6a08-45c9-8880-bca0fb1cee4e" name="Changes" comment="Autenticación">
-      <change beforePath="$PROJECT_DIR$/../brands/src/main/java/edu/javeriana/brands/controller/BrandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../brands/src/main/java/edu/javeriana/brands/controller/BrandController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../brands/target/classes/edu/javeriana/brands/controller/BrandController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../brands/target/classes/edu/javeriana/brands/controller/BrandController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/app.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/app/components/edit-tool/edit-tool.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/components/edit-tool/edit-tool.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/app/components/shared/nav-bar/nav-bar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/components/shared/nav-bar/nav-bar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/app/components/shared/tool-card/tool-card.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/components/shared/tool-card/tool-card.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/app/components/users/users.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/components/users/users.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/app/components/users/users.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/components/users/users.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/app/services/tools.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/services/tools.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tools/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tools/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tools/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tools/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/javeriana/users/control/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/javeriana/users/control/UserController.java" afterDir="false" />
-    </list>
+    <list default="true" id="5877c593-c3c1-4323-a2e8-2a8ce0d5c263" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,8 +13,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -61,15 +45,7 @@
     "WebServerToolWindowFactoryState": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_opened_file_path": "C:/Users/sando/OneDrive - Pontificia Universidad Javeriana/Desktop/users",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "spring.configuration.checksum": "9bc65c2abec141778ffaa729489f3e87",
-    "vue.rearranger.settings.migration": "true"
+    "last_opened_file_path": "C:/Users/sando/OneDrive - Pontificia Universidad Javeriana/Desktop/users"
   }
 }]]></component>
   <component name="RecentsManager">

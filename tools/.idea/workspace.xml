@@ -18,6 +18,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../users/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../users/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/app.routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/app/components/users/users.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/components/users/users.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/app/components/users/users.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/components/users/users.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../users/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../users/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../users/src/main/java/edu/javeriana/users/control/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../users/src/main/java/edu/javeriana/users/control/UserController.java" afterDir="false" />
     </list>

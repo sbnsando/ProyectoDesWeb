@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
+import { FormsModule } from '@angular/forms';
+
 import { AppComponent } from './app.component';
 import { ToolCardComponent } from './components/shared/tool-card/tool-card.component';
 import { HomeComponent } from './components/home/home.component';
@@ -44,7 +46,8 @@ import { NewBrandComponent } from './components/new-brand/new-brand.component';
     BrowserModule,
     RouterModule.forRoot( ROUTES, {useHash: true} ),
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
