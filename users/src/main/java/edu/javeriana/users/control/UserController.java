@@ -82,6 +82,7 @@ public class UserController {
      * @param password Contraseña del usuario.
      * @return Respuesta HTTP indicando el resultado del inicio de sesión.
      */
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/login/{email}&{password}")
     public ResponseEntity<?> login(@PathVariable("email") String email, @PathVariable("password") String password){
         if(!userService.existsByEmail(email)){
@@ -142,6 +143,7 @@ public class UserController {
      * @param user Datos del usuario actualizado.
      * @return Respuesta HTTP indicando el resultado de la actualización del usuario.
      */
+    @CrossOrigin(origins = "http://localhost:4200")
     @PutMapping("/update/{id}")
     public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody User user){
         if(!userService.existById(id))
@@ -174,6 +176,7 @@ public class UserController {
      * @param id ID del usuario a eliminar.
      * @return Respuesta HTTP indicando el resultado de la eliminación del usuario.
      */
+    @CrossOrigin(origins = "http://localhost:4200")
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> delete(@PathVariable("id") int id){
         if(!userService.existById(id))

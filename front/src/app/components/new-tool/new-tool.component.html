@@ -1,0 +1,92 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="container mt-3">
+    <h1>Nueva Herramienta  </h1>
+        
+    
+        <form autocomplete="off" [formGroup]="formulario" (ngSubmit)="save()">
+            <div class="form-group mb-5 small-container">
+                
+                <div class="col mt-3">
+                    <input type="text" 
+                    class="form-control" 
+                    id="inputTextNombre" 
+                    aria-describedby="inputText" 
+                    placeholder="Nombre"
+                    formControlName="inputTextNombre"
+                    [class.is-invalid]="inputNotValid">
+                    <small *ngIf="inputNotValid" class="text-danger">
+                        Ingrese texto
+                    </small>
+                </div>
+                <div class="col-auto mt-3">
+                    <select class="form-select" 
+                    aria-label="Select option"
+                    formControlName="selected"
+                    [class.is-invalid]="selectNotValid">
+                        <option value="Seleccione">Marca</option>
+                        <option *ngFor="let option of Options" [ngValue]="option">
+                            {{ option }}
+                        </option>
+                    </select>
+                </div>
+                <div class="col mt-3">
+                    <input type="text" 
+                    class="form-control" 
+                    id="inputTextDesc" 
+                    aria-describedby="inputTextDesc" 
+                    placeholder="Descripción"
+                    formControlName="inputTextDesc"
+                    [class.is-invalid]="inputNotValid">
+                    <small *ngIf="inputNotValid" class="text-danger">
+                        Ingrese texto
+                    </small>
+                </div>
+                <div class="col mt-3">
+                    <input type="number" 
+                    class="form-control" 
+                    id="inputCant" 
+                    aria-describedby="inputCant" 
+                    placeholder="Cantidad"
+                    formControlName="inputCant"
+                    [class.is-invalid]="inputNotValid">
+                    <small *ngIf="inputNotValid" class="text-danger">
+                        Ingrese texto
+                    </small>
+                </div>
+                <div class="col mt-3">
+                    <input type="number" 
+                    class="form-control" 
+                    id="inputPrice" 
+                    aria-describedby="inputPrice" 
+                    placeholder="Precio"
+                    formControlName="inputPrice"
+                    [class.is-invalid]="inputNotValid">
+                    <small *ngIf="inputNotValid" class="text-danger">
+                        Ingrese texto
+                    </small>
+                </div>
+
+                <div class="col mt-3">
+                    <input type="text" 
+                    class="form-control" 
+                    id="inputTextCountry" 
+                    aria-describedby="inputTextCountry" 
+                    placeholder="País"
+                    formControlName="inputTextCountry"
+                    [class.is-invalid]="inputNotValid">
+                    <small *ngIf="inputNotValid" class="text-danger">
+                        Ingrese texto
+                    </small>
+                </div>
+                <div class="col-6 mt-3">
+                    <button class="btn btn-primary bg-danger" (click)="cancel()">Cancelar</button>
+                    <button type="submit" class="btn btn-primary ms-2" > Guardar</button>
+                </div>
+            </div>
+                    
+        </form>
+    
+    </div>
+
+<app-footer></app-footer>

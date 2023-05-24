@@ -19,6 +19,8 @@ import { BrandsComponent } from './components/brands/brands.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { EditToolComponent } from './components/edit-tool/edit-tool.component';
 import { EditBrandComponent } from './components/edit-brand/edit-brand.component';
+import { NewToolComponent } from './components/new-tool/new-tool.component';
+import { NewBrandComponent } from './components/new-brand/new-brand.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { EditBrandComponent } from './components/edit-brand/edit-brand.component
     BrandsComponent,
     EditUserComponent,
     EditToolComponent,
-    EditBrandComponent
+    EditBrandComponent,
+    NewToolComponent,
+    NewBrandComponent
   ],
   imports: [
     BrowserModule,

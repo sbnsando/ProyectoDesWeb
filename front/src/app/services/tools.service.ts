@@ -91,4 +91,41 @@ export class ToolsService {
               });
     });
   }
+
+  updateTool(tool: any, toolId:number): Promise<Object> {
+    return new Promise((resolve, reject) => {
+
+      const options = {headers: {'Content-Type': 'application/json'}};
+
+      this.http.put('http://localhost:8081/tool/update/'+tool.id, JSON.stringify(tool), options).subscribe(data => {
+        resolve(data);
+      });
+    });
+  }
+
+  createTool(tool: any): Promise<Object> {
+    return new Promise((resolve, reject) => {
+      
+      console.log(JSON.stringify(tool));
+      const options = {headers: {'Content-Type': 'application/json'}};
+
+      this.http.post('http://localhost:8081/tool/create', JSON.stringify(tool), options).subscribe(data => {
+        resolve(data);
+      });
+      
+    });
+  }
+
+  createBrand(brand: any): Promise<Object> {
+    return new Promise((resolve, reject) => {
+      
+      console.log(JSON.stringify(brand));
+      const options = {headers: {'Content-Type': 'application/json'}};
+
+      this.http.post('http://localhost:8080/brand/create', JSON.stringify(brand), options).subscribe(data => {
+        resolve(data);
+      });
+      
+    });
+  }
 }

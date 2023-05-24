@@ -1,0 +1,33 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="container mt-3">
+    <h1>Crear Marca  </h1>
+        
+    
+        <form autocomplete="off" [formGroup]="formulario" (ngSubmit)="save()">
+            <div class="form-group mb-5 small-container">
+                
+                <div class="col mt-3">
+                    <input type="text" 
+                    class="form-control" 
+                    id="inputTextNombre" 
+                    aria-describedby="inputText" 
+                    placeholder="Nombre"
+                    formControlName="inputTextNombre"
+                    [class.is-invalid]="inputNotValid">
+                    <small *ngIf="inputNotValid" class="text-danger">
+                        Ingrese texto
+                    </small>
+                </div>
+                
+                <div class="col-6 mt-3">
+                    <button class="btn btn-primary bg-danger" (click)="cancel()">Cancelar</button>
+                    <button type="submit" class="btn btn-primary ms-2" > Guardar</button>
+                </div>
+            </div>
+                    
+        </form>
+    
+    </div>
+
+<app-footer></app-footer>

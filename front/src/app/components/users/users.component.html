@@ -1,1 +1,32 @@
-<p>users works!</p>
+<app-nav-bar></app-nav-bar>
+
+<div class="container mt-5">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Email</th>
+            <th scope="col">Cumpleaños</th>
+            <th scope="col">Admin?</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <th scope="row">{{user.id}}</th>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.birthday}}</td>
+            <td>{{user.admin}}</td>
+            <td>
+                <button class="btn btn-secondary mt-3 ms-2">📝</button>
+                <button class="btn btn-secondary mt-3 ms-2" (click)="deleteUser(user.id)">❌</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+|
+
+<app-footer></app-footer>

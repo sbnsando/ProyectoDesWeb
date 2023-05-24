@@ -60,6 +60,7 @@ public class BrandController {
      * @param name El nombre de la marca.
      * @return Una respuesta HTTP con los detalles de la marca y el estado OK si existe, o un mensaje de "No encontrado" y el estado NOT_FOUND si no existe.
      */
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/detailname/{name}")
     public ResponseEntity<Brand> getByName(@PathVariable("name") String name){
         if(!brandService.existByName(name)){
@@ -75,6 +76,7 @@ public class BrandController {
      * @param brand La marca a crear.
      * @return Una respuesta HTTP con un mensaje de éxito si la marca se crea correctamente, o un mensaje de error y el estado BAD_REQUEST si hay algún problema.
      */
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/create")
     public ResponseEntity<?> create(@RequestBody Brand brand){
         if(StringUtils.isBlank(brand.getName()))
@@ -97,6 +99,7 @@ public class BrandController {
      * @param brand La marca con los nuevos detalles.
      * @return Una respuesta HTTP con un mensaje de éxito si la marca se actualiza correctamente, o un mensaje de error y el estado BAD_REQUEST si hay algún problema.
      */
+    @CrossOrigin(origins = "http://localhost:4200")
     @PutMapping("/update/{id}")
     public ResponseEntity<?> update(@PathVariable("id")int id, @RequestBody Brand brand){
         if(!brandService.existById(id))

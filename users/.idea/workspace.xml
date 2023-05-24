@@ -4,7 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5877c593-c3c1-4323-a2e8-2a8ce0d5c263" name="Changes" comment="" />
+    <list default="true" id="80a83589-6a08-45c9-8880-bca0fb1cee4e" name="Changes" comment="Autenticación">
+      <change beforePath="$PROJECT_DIR$/../brands/src/main/java/edu/javeriana/brands/controller/BrandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../brands/src/main/java/edu/javeriana/brands/controller/BrandController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../brands/target/classes/edu/javeriana/brands/controller/BrandController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../brands/target/classes/edu/javeriana/brands/controller/BrandController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/app.routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/app/components/edit-tool/edit-tool.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/components/edit-tool/edit-tool.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/app/components/shared/nav-bar/nav-bar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/components/shared/nav-bar/nav-bar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/app/components/shared/tool-card/tool-card.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/components/shared/tool-card/tool-card.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/app/components/users/users.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/components/users/users.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/app/components/users/users.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/components/users/users.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/app/services/tools.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/services/tools.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tools/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tools/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tools/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tools/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/javeriana/users/control/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/javeriana/users/control/UserController.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,6 +34,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -30,6 +49,7 @@
     </option>
   </component>
   <component name="ProjectId" id="2QDlpj1BwunOsGOGFBH8EMdClAd" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -38,9 +58,18 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_opened_file_path": "C:/Users/sando/OneDrive - Pontificia Universidad Javeriana/Desktop/users"
+    "last_opened_file_path": "C:/Users/sando/OneDrive - Pontificia Universidad Javeriana/Desktop/users",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "spring.configuration.checksum": "9bc65c2abec141778ffaa729489f3e87",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -54,7 +83,7 @@
       <recent name="edu.javeriana.users.repository" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.edu.javeriana.users.UsersApplication">
+  <component name="RunManager" selected="Spring Boot.UsersApplication">
     <configuration name="edu.javeriana.users.UsersApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.javeriana.users.UsersApplication" />
       <module name="users" />
@@ -78,21 +107,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="edu.javeriana.users.control" />
       <option name="MAIN_CLASS_NAME" value="edu.javeriana.users.control.UserControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="users" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.javeriana.users.repository.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.javeriana.users.repository" />
-      <option name="MAIN_CLASS_NAME" value="edu.javeriana.users.repository.UserRepositoryTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -128,36 +142,47 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UsersApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="users" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="edu.javeriana.users.UsersApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.javeriana.users.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.UsersApplication" />
         <item itemvalue="Application.edu.javeriana.users.UsersApplication" />
         <item itemvalue="JUnit.UserControllerTest" />
         <item itemvalue="JUnit.UserServiceTest" />
         <item itemvalue="JUnit.UserTest" />
-        <item itemvalue="JUnit.UserRepositoryTest" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="5877c593-c3c1-4323-a2e8-2a8ce0d5c263" name="Changes" comment="" />
+      <changelist id="80a83589-6a08-45c9-8880-bca0fb1cee4e" name="Changes" comment="Autenticación" />
       <created>1684896219390</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684896219390</updated>
+      <workItem from="1684967439344" duration="1603000" />
     </task>
     <servers />
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/users$UserTest.ic" NAME="UserTest Coverage Results" MODIFIED="1684949616410" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>edu.javeriana.users.entity.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/users$UsersApplicationTests.ic" NAME="UsersApplicationTests Coverage Results" MODIFIED="1684949075295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>edu.javeriana.users.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/users$UserControllerTest.ic" NAME="UserControllerTest Coverage Results" MODIFIED="1684950591318" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>edu.javeriana.users.control.*</FILTER>
+    <SUITE FILE_PATH="coverage/users$UserServiceTest.ic" NAME="UserServiceTest Coverage Results" MODIFIED="1684949951672" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.javeriana.users.service.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/users$UserRepositoryTest.ic" NAME="UserRepositoryTest Coverage Results" MODIFIED="1684949370916" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>edu.javeriana.users.repository.*</FILTER>
@@ -165,8 +190,14 @@
     <SUITE FILE_PATH="coverage/users$edu_javeriana_users_UsersApplication.ic" NAME="edu.javeriana.users.UsersApplication Coverage Results" MODIFIED="1684949504973" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>edu.javeriana.users.control.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/users$UserServiceTest.ic" NAME="UserServiceTest Coverage Results" MODIFIED="1684949951672" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>edu.javeriana.users.service.*</FILTER>
+    <SUITE FILE_PATH="coverage/users$UserControllerTest.ic" NAME="UserControllerTest Coverage Results" MODIFIED="1684950591318" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.javeriana.users.control.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/users$UserTest.ic" NAME="UserTest Coverage Results" MODIFIED="1684949616410" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.javeriana.users.entity.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/users$UsersApplicationTests.ic" NAME="UsersApplicationTests Coverage Results" MODIFIED="1684949075295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.javeriana.users.*</FILTER>
     </SUITE>
   </component>
 </project>
