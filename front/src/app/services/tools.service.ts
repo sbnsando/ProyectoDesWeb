@@ -81,4 +81,14 @@ export class ToolsService {
         });
     });
   }
+
+  getToolById(idTool: string): Promise<Object> {
+    return new Promise((resolve, reject) => {
+
+      this.http.get('http://localhost:8081/tool/detail/'+idTool,
+              ).subscribe(d => {
+                resolve(d);
+              });
+    });
+  }
 }

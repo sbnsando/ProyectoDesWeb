@@ -51,6 +51,7 @@ public class ToolController {
      * @param id El ID de la herramienta.
      * @return La herramienta encontrada o un mensaje de error si no existe.
      */
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/detail/{id}")
     public ResponseEntity<Tool> getById(@PathVariable("id") int id){
         if(!toolService.existById(id)){
@@ -81,6 +82,7 @@ public class ToolController {
      * @param tool La herramienta a crear.
      * @return Un mensaje de éxito si se crea correctamente o un mensaje de error si no se puede crear.
      */
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/create")
     public ResponseEntity<?> create(@RequestBody Tool tool){
         if(StringUtils.isBlank(tool.getName()))
@@ -105,6 +107,7 @@ public class ToolController {
      * @param tool La herramienta con los nuevos datos.
      * @return Un mensaje de éxito si se actualiza correctamente o un mensaje de error si no se puede actualizar.
      */
+    @CrossOrigin(origins = "http://localhost:4200")
     @PutMapping("/update/{id}")
     public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody Tool tool){
         if(!toolService.existById(id))

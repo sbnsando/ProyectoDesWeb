@@ -13,6 +13,12 @@ import { LoginComponent } from './components/login/login.component';
 import { ROUTES } from './app.routes';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { UsersComponent } from './components/users/users.component';
+import { ToolsComponent } from './components/tools/tools.component';
+import { BrandsComponent } from './components/brands/brands.component';
+import { EditUserComponent } from './components/edit-user/edit-user.component';
+import { EditToolComponent } from './components/edit-tool/edit-tool.component';
+import { EditBrandComponent } from './components/edit-brand/edit-brand.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +28,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     SearchComponent,
     NavBarComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    UsersComponent,
+    ToolsComponent,
+    BrandsComponent,
+    EditUserComponent,
+    EditToolComponent,
+    EditBrandComponent
   ],
   imports: [
     BrowserModule,

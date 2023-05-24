@@ -29,6 +29,7 @@ export class HomeComponent {
             this.tools.map((tool: any) => {
               tool.brand = this.brands.find((b: any) => b.id === tool.idBrand).name || 'Sin marca';
             })
+            //console.log(this.tools);
           });
       });
   }
