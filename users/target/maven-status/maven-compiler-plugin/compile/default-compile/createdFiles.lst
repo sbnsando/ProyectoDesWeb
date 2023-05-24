@@ -1,12 +1,5 @@
-edu/javeriana/users/security/UserDetailsImpl.class
-edu/javeriana/users/service/UserService.class
-edu/javeriana/users/security/UserDetailServiceImpl.class
-edu/javeriana/users/repository/UserRepository.class
-edu/javeriana/users/entity/User.class
-edu/javeriana/users/security/JWTAuthenticationFilter.class
-edu/javeriana/users/UsersApplication.class
-edu/javeriana/users/security/WebSecurityConfig.class
-edu/javeriana/users/controller/UserController.class
-edu/javeriana/users/security/AuthCredentials.class
-edu/javeriana/users/security/JWTAuthorizationFilter.class
-edu/javeriana/users/security/TokenUtils.class
+edu\javeriana\users\entity\User.class
+edu\javeriana\users\repository\UserRepository.class
+edu\javeriana\users\control\UserController.class
+edu\javeriana\users\UsersApplication.class
+edu\javeriana\users\service\UserService.class

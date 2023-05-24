@@ -1,1 +1,4 @@
-edu/javeriana/users/UsersApplicationTests.class
+edu\javeriana\users\control\UserControllerTest.class
+edu\javeriana\users\UsersApplicationTests.class
+edu\javeriana\users\entity\UserTest.class
+edu\javeriana\users\service\UserServiceTest.class
